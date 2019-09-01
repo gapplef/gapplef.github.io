@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg?v=7.4.0" color="#222">
+  <link rel="manifest" href="/images/favicon/manifest.json">
+  <meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+  <meta name="google-site-verification" content="jpc-0wXaxN6lM5RYg0sX_ULaFnMnNWjL-EHPb9ihARg">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Ubuntu:300,300italic,400,400italic,700,700italic|Ubuntu Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"width":245},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: true,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="群、环, 域、格、模、线性空间、域代数…本文内容对应于抽象代数，并没有学过这门课程，认知难免浅陋。">
+<meta name="keywords" content="algebra">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代数结构简介：群、环, 域、格、模...">
+<meta property="og:url" content="https://yelf.me/notes/math/algebra/algebra-101/index.html">
+<meta property="og:site_name" content="C&#39;Joy">
+<meta property="og:description" content="群、环, 域、格、模、线性空间、域代数…本文内容对应于抽象代数，并没有学过这门课程，认知难免浅陋。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://yelf.me/images/Notes/math-space.jpg">
+<meta property="og:updated_time" content="2019-08-11T14:43:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="代数结构简介：群、环, 域、格、模...">
+<meta name="twitter:description" content="群、环, 域、格、模、线性空间、域代数…本文内容对应于抽象代数，并没有学过这门课程，认知难免浅陋。">
+<meta name="twitter:image" content="https://yelf.me/images/Notes/math-space.jpg">
+  <link rel="alternate" href="/atom.xml" title="C'Joy" type="application/atom+xml">
+  <link rel="canonical" href="https://yelf.me/notes/math/algebra/algebra-101/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>代数结构简介：群、环, 域、格、模... | C'Joy</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64070885-1"></script>
+  <script pjax>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-64070885-1');
+    }
+  </script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">C'Joy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">GET (SH)IT DONE</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-microblog">
+      
+    
+
+    <a href="https:\/\/weibo.yelf.me" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-mail-forward"></i> <br>Microblog</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://yelf.me/notes/math/algebra/algebra-101/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yelf">
+      <meta itemprop="description" content="读万卷书，行万里路">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="C'Joy">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">代数结构简介：群、环, 域、格、模...
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2018-05-21 20:00:00" itemprop="dateCreated datePublished" datetime="2018-05-21T20:00:00+08:00">2018-05-21</time>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/Math/" itemprop="url" rel="index"><span itemprop="name">Math</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span id="/notes/math/algebra/algebra-101/" class="post-meta-item leancloud_visitors" data-flag-title="代数结构简介：群、环, 域、格、模..." title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/notes/math/algebra/algebra-101/#comments" itemprop="discussionUrl"><span class="post-comments-count disqus-comment-count" data-disqus-identifier="notes/math/algebra/algebra-101/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/notes/math/algebra/algebra-101/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/notes/math/algebra/algebra-101/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>群、环, 域、格、模、线性空间、域代数…本文内容对应于抽象代数，并没有学过这门课程，认知难免浅陋。</p>
+</blockquote>
+<a id="more"></a>
+<p>现在数学是建立在集合论这个共同的基础上的，集合论中有一些基本的概念，如集合，关系，函数，等价等，作为数学各个分支的共同语言，本文中数学概念的定义也都是从集合出发的。</p>
+<h4 id="数学结构"><a class="markdownIt-Anchor" href="#数学结构"></a> <a href="https://en.wikipedia.org/wiki/Mathematical_structure" target="_blank" rel="noopener">数学结构</a></h4>
+<p>数学中，集合上的结构是指集合上附加的、赋予集合特殊含义的数学对象。常见的结构有序(Order)、代数结构、拓扑(Topology)、测度(Measure)、度量(Metric)/几何、等价关系、范畴(Category)、微分结构等。上世纪中期盛极一时的法国布尔巴基学派(结构主义)曾提出数学的三种基本结构：</p>
+<ul>
+<li>代数结构：由集合及其上的运算组成，如群、环、域、模、线性空间等。</li>
+<li>序结构：由集合及其上的序关系组成，如偏序集、全序集、良序集。</li>
+<li>拓扑结构：由集合及其上的拓扑组成，如拓扑空间、度量空间、流形、紧致集等。</li>
+</ul>
+<p>之后，随着代数拓扑学、微分拓扑学、代数几何学、李群和代数群理论、多复变量函数论、泛函分析等领域趋于平稳，而难以结构化的数学分支，如分析数学、概率论与统计学、离散数学(组合数学)、应用数学、计算数学等开始蓬勃发展，布尔巴基学派逐渐衰微。(p.s.感觉后面这些数学都大都更适于计算机处理，计算机的普及促进了新数学领域的发展。)</p>
+<h4 id="代数结构"><a class="markdownIt-Anchor" href="#代数结构"></a> <a href="https://en.wikipedia.org/wiki/Algebraic_structure" target="_blank" rel="noopener">代数结构</a></h4>
+<p>抽象代数中，集合上的一个代数结构是指定义在集合上的一系列有限运算，而集合及其上的代数结构一起也被称为代数。常见的代数结构有群、环, 域、格、模、线性空间、域代数等。</p>
+<ul>
+<li><strong><code>群G(Group)</code></strong>：群是集合上定义了一个满足闭合性、结合律、单位元、可逆性(任何元素有逆元素)四条公理的二元运算的代数结构。<br>
+注意上述公理中不包含交换律，交换律成立的群被称为阿贝尔群(交换群)。通常，群定义中的二元运算称为乘法，单位元写作1，此时群也被称为乘法群。对于满足交换律的阿贝尔群，二元运算通常称为加法，单位元写为0，因此阿贝尔群也被称为加法群。<br>
+可逆性意味着可以定义逆运算——除法，由于乘法不一定满足交换律，因此又可分为左除<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>a</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>b</mi><mo stretchy="false">(</mo><mi>a</mi><mi mathvariant="normal">\</mi><mi>b</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">a^{-1}b(a\backslash b)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mord mathdefault">b</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mord">\</span><span class="mord mathdefault">b</span><span class="mclose">)</span></span></span></span>、右除<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><msup><mi>a</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo stretchy="false">(</mo><mi>b</mi><mi mathvariant="normal">/</mi><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">ba^{-1}(b/a)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mord">/</span><span class="mord mathdefault">a</span><span class="mclose">)</span></span></span></span>。对于满足交换律的阿贝尔群，两种除法相同，此时二元运算通常称为加法，逆运算称为减法。
+<ul>
+<li>半群：闭合于可结合二元运算下的集合形成的代数结构；相比群只要求二元运算满足闭合性和结合律，不需要有单位元和逆元。</li>
+<li><strong><code>幺半群(Monoid)</code></strong>：定义了可结合二元运算和单位元的代数结构，是带有单位元的半群；相比群不要求有逆元。</li>
+<li>类似的代数结构还有：原群(Magma) &gt; 拟群(Quasigroup, Loop) &gt; 半群；半群胚 &gt; <strong><code>范畴(Category)</code></strong> &gt; 群胚(Groupoid)</li>
+<li>范畴不要求闭合性，但要求结合律和单位元，幺半群是特殊的范畴，只有一个对象(Object)。</li>
+</ul>
+</li>
+<li><strong><code>环R(Ring)</code></strong>：环是集合上定义了满足特定公理的广义加法和乘法两个二元运算的代数结构。
+<ul>
+<li>环是一个关于加法的阿贝尔群：定义有满足结合律、交换律、单位元、可逆性的加法运算。</li>
+<li>环是一个关于乘法的半群：定义有满足结合律的乘法运算。</li>
+<li>环的乘法关于加法满足分配律。</li>
+<li>无零因子环：没有非0零因子的环称为无零因子环，0是唯一的零因子；等价的，也可以说是满足零乘性质的环：任何非0元素的乘积非0或If <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mi>b</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">ab=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>, then <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> or <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">b=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>；还可以说R\{0}对乘法封闭，构成一个半群。</li>
+<li>幺环：如果环的乘法有单位元，则环是关于乘法的幺半群，环被称为幺环(维基中环的定义要求乘法有单位元)。</li>
+<li>交换环(Commutative Ring)：环的加法满足交换律，但乘法不要求满足交换律；乘法满足交换律的环称为交换环。</li>
+<li>除环/反称域(Division Ring/Skew Field)：环不要求乘法满足可逆性，乘法满足可逆性的幺环称为除环，等价的可以说R\{0}对乘法形成一个群。除环不要求乘法的交换性，非交换的除环是体，交换的除环是域。</li>
+<li>整环/整域(Entire Ring/Integral Domain)：无零因子的交换幺环；整环是整数环的推广，非零元素满足消去律：If <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mi mathvariant="normal">≠</mi><mn>0</mn></mrow><annotation encoding="application/x-tex">a≠0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mi>b</mi><mo>=</mo><mi>a</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">ab=ac</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault">c</span></span></span></span> implies <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mo>=</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">b=c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span>。</li>
+<li><strong><code>域F(Field)</code></strong>：乘法满足交换律、可逆性，且有单位元的环称为域；域是交换的除环，是任何非零元素都有逆元素的整环。<br>
+抽象代数中，中文的<code>域</code>一般指Field，英文维基的环论下还有一个域(Domain)，没有对应的中文词条。域(Domain)是一个满足零乘性质的非零环，即非零的无零因子环。</li>
+<li><strong><code>向量空间V(Vector Space)</code></strong>：向量空间也称线性空间(Linear Space)，是域F上的一个集合，其中定义了向量加法和标量乘法两种运算，向量加法满足结合律、交换律、单位元、可逆性，而标量乘法与标量的域乘法相容<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo stretchy="false">(</mo><mi>b</mi><mi>α</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mi>a</mi><mi>b</mi><mo stretchy="false">)</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">a(bα) = (ab)α</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">a</span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mord mathdefault">b</span><span class="mclose">)</span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span></span></span></span>、有单位元、对向量加法及标量的域加法满足分配律。</li>
+<li><strong><code>模M(Module)</code></strong>：Module over a Ring <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> Vector Space over a Field；模是对线性空间概念的推广，线性空间中标量的代数结构是域(Field)，而模则将标量放宽到任意环(Ring)的元素，乘法运算定义在环元素与模元素之间。由于乘法不一定满足交换律，又可分为左R-模、右R-模。</li>
+<li><strong><code>域代数(Algebra over a Field)</code></strong>：线性空间再加上一个双线性运算(乘法)即成为域代数，如矩阵代数、张量代数、李代数、外代数。类似于线性空间推广到模，将标量的域F替换为交换环R，可以推广得到环代数(Algebra over a Ring)。</li>
+</ul>
+</li>
+<li><strong><code>格L(Lattice)</code></strong>：从序理论角度定义，格是一个偏序集，其非空有限子集都有一个上确界(并)和一个下确界(交)；从抽象代数角度定义，格是定义了满足交换律、结合律及吸收律三个公理的两个二元运算(交并)的集合。</li>
+</ul>
+<!--
+整数及加法构成整数环(除法不行，不一定有逆元)
+有理数及加法、乘法构成有理数域$Q$
+$a+b\sqrt{2}$形式的实数与加法、乘法也构成域，被称为有理数数域$Q$的扩域$Q(\sqrt{2})$
+所有的实数关于加法、乘法也构成一个域，就是通常所说的实数域
+类似的，对于实数$a+b\sqrt{-1}$形式的数与加法、乘法也构成域，复数域
+所有**整系数**多项式的根也构成一个域，代数数域
+不是代数数的实数称为超越数，例如$\pi,e$
+-->
+<p>代数结构由集合上的满足特定公理的运算定义，而将这些代数结构本身作为研究对象的学科便是<code>泛代数</code>。<strong>范畴论</strong>是另一种研究代数结构间关系的工具：范畴是一系列对象及对象间箭头(态射)构成的代数结构；任意代数结构都有其同态的概念，从而可以构成一个范畴，比如所有的群及群同态便构成了群范畴。范畴论在编程语言理论中有重要应用，如函数式编程中单子的概念。</p>
+<h4 id="空间"><a class="markdownIt-Anchor" href="#空间"></a> <a href="https://en.wikipedia.org/wiki/Space_(mathematics)" target="_blank" rel="noopener">空间</a></h4>
+<p>容纳运动是空间的本质特征，这里所说的运动是从一个点到另一个点的变换，而不是微积分意义上的“连续”性的运动。<br>
+认识到了这些，我们就可以把我们关于三维空间的认识扩展到其他的空间。事实上，不管是什么空间，都必须容纳和支持在其中发生的符合规则的运动（变换）。你会发现，在某种空间中往往会存在一种相对应的变b换，比如拓扑空间中有拓扑变换，线性空间中有线性变换，仿射空间中有仿射变换，其实这些变换都只不过是对应空间中允许的运动形式而已。因此只要知道，“空间”是容纳运动的一个对象集合，而变换则规定了对应空间的运动。</p>
+<p>代数空间<br>
+数学中，空间是指有额外(数学)结构的集合。常见的有线性空间(向量空间)、仿射空间、拓扑空间、测度空间、度量空间、赋范空间、内积空间、函数空间等。</p>
+<p>度量空间是能在上面定义收敛, 连续概念的空间, 比度量空间更一般的空间是拓扑空间, 在拓扑空间上也能定义收敛和连续概念。<br>
+而测度空间是能在上面定义(Lebsegue)积分的空间。<br>
+赋范空间是线性空间中添加了距离的概念(范数)，而内积空间是线性空间添加了距离和角度两个概念(内积)。</p>
+<p>测度空间与可测空间的区别, 可测空间是能在上面定义测度, 测度空间是已经在上面定义了测度。</p>
+<p>希尔伯特空间<br>
+希尔伯特空间即完备的内积空间，也就是说一个带有内积的完备向量空间。当一个内积空间满足通过内积空间可推导出范数空间(赋范空间)，并且是完备的，那么这个内积空间就是希尔伯特空间。<br>
+如常见的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi mathvariant="double-struck">R</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">\mathbb{R}^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68889em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord mathbb">R</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span>，满足内积运算，能够推导出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">l2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord">2</span></span></span></span>范数，且是完备的，所以是希尔伯特空间。</p>
+<p>简单来说，基本的线性空间只包括加法和数乘操作，在此基础上我们引入内积操作，这样就把空间升级为内积空间。根据内积我们可以定义一个范数：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><mi>x</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><mo>=</mo><mo>&lt;</mo><mi>x</mi><mo separator="true">,</mo><mi>x</mi><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">||x||=&lt;x,x&gt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord">∣</span><span class="mord mathdefault">x</span><span class="mord">∣</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7335400000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span></span></span></span>于是我们就得到了一个赋范向量空间。有了范数之后我们就可以引入一个度量：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo stretchy="false">(</mo><mi>x</mi><mn>1</mn><mo separator="true">,</mo><mi>x</mi><mn>2</mn><mo stretchy="false">)</mo><mo>=</mo><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><mi>x</mi><mn>1</mn><mo>−</mo><mi>x</mi><mn>2</mn><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">d(x1,x2)=||x1-x2||</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">d</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord">∣</span><span class="mord mathdefault">x</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">x</span><span class="mord">2</span><span class="mord">∣</span><span class="mord">∣</span></span></span></span>用于计算向量<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">x1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord mathdefault">x</span><span class="mord">1</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">x2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord mathdefault">x</span><span class="mord">2</span></span></span></span>之间的距离。于是我们就得到一个度量空间。如果这样的空间在这个度量下是完备的，那么这个空间叫做希尔伯特空间。</p>
+<p>再生核希尔伯特空间(RKHS)</p>
+<p><a href="https://blog.csdn.net/asd136912/article/details/79163368" target="_blank" rel="noopener">希尔伯特空间/再生核希尔伯特空间</a><br>
+<a href="https://blog.csdn.net/ChangHengyi/article/details/80577318" target="_blank" rel="noopener">一文带你理解再生核希尔伯特空间(RKHS)及各种空间</a></p>
+<p><img src="/images/Notes/math-space.jpg" alt="Spaces" title="Overview of types of abstract spaces(wikipedia)."></p>
+<h4 id="扩展阅读"><a class="markdownIt-Anchor" href="#扩展阅读"></a> 扩展阅读</h4>
+<p><a href="http://blog.jobbole.com/94591/" target="_blank" rel="noopener">MIT牛人解说数学体系</a><br>
+<a href="https://blog.csdn.net/myan/article/details/647511" target="_blank" rel="noopener">理解矩阵-孟岩</a></p>
+<p>新理解矩阵</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        <div id="reward-container">
+  <div>Donate if you enjoy this content.</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.jpg" alt="yelf WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/alipay.jpg" alt="yelf Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>yelf</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://yelf.me/notes/math/algebra/algebra-101/" title="代数结构简介：群、环, 域、格、模...">https://yelf.me/notes/math/algebra/algebra-101/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/algebra/" rel="tag"># algebra</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/notes/website/website-test/" rel="next" title="从零开始建立个人博客(终)：网页测试">
+                  <i class="fa fa-chevron-left"></i> 从零开始建立个人博客(终)：网页测试
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/notes/math/algebra/algebra-102/" rel="prev" title="代数">
+                  代数 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+      <div class="comment-button-group">
+        
+          <a class="btn comment-button disqus">disqus</a>
+        
+          <a class="btn comment-button valine">valine</a>
+        
+      </div>
+      
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+        </div>
+      
+        <div class="comment-position valine">
+          <div class="comments" id="comments"></div>
+        </div>
+      
+      <script pjax>
+        (function() {
+          let commentButton = document.querySelectorAll('.comment-button');
+            commentButton.forEach(item => {
+            let commentClass = item.classList[2];
+            item.addEventListener('click', () => {
+              commentButton.forEach(rmActive => rmActive.classList.remove('active'));
+              item.classList.add('active');
+              document.querySelectorAll('.comment-position').forEach(rmActive => rmActive.classList.remove('active'));
+              document.querySelector(`.comment-position.${commentClass}`).classList.add('active');
+              
+                localStorage.setItem('comments_active', commentClass);
+              
+            });
+          });
+          let activeClass = 'valine';
+          
+            activeClass = localStorage.getItem('comments_active') || activeClass;
+          
+          if (activeClass) {
+            let activeButton = document.querySelector(`.comment-button.${activeClass}`);
+            if (activeButton) {
+              activeButton.click();
+            }
+          }
+        })();
+      </script>
+    
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数学结构"><span class="nav-number">1.</span> <span class="nav-text"> 数学结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代数结构"><span class="nav-number">2.</span> <span class="nav-text"> 代数结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空间"><span class="nav-number">3.</span> <span class="nav-text"> 空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展阅读"><span class="nav-number">4.</span> <span class="nav-text"> 扩展阅读</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="yelf">
+  <p class="site-author-name" itemprop="name">yelf</p>
+  <div class="site-description" itemprop="description">读万卷书，行万里路</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">77</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/iyelf/photos" title="Weibo &rarr; https://weibo.com/iyelf/photos" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://instagram.com/yelf.me/" title="Instagram &rarr; https://instagram.com/yelf.me/" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-thumbs-o-up"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/c/PBSSpaceTime" title="https://www.youtube.com/c/PBSSpaceTime" rel="noopener" target="_blank">PBS Space Time</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/c/3Blue1Brown" title="https://www.youtube.com/c/3Blue1Brown" rel="noopener" target="_blank">3B1B</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://brilliant.org" title="https://brilliant.org" rel="noopener" target="_blank">Brilliant</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://multiverse.lamost.org/" title="https://multiverse.lamost.org/" rel="noopener" target="_blank">章鱼喵</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://openmetric.org/multiverse/" title="http://openmetric.org/multiverse/" rel="noopener" target="_blank">时见疏星</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.physixfan.com/" title="https://www.physixfan.com/" rel="noopener" target="_blank">宇宙的心弦</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.changhai.org/" title="https://www.changhai.org/" rel="noopener" target="_blank">卢昌海</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.loyhome.com/" title="https://www.loyhome.com/" rel="noopener" target="_blank">落园</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://thzt.github.io/" title="https://thzt.github.io/" rel="noopener" target="_blank">何幻</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://kexue.fm" title="https://kexue.fm" rel="noopener" target="_blank">科学空间</a>
+        </li>
+      
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2012 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yelf</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a></div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a></div>
+
+        
+
+
+
+
+
+
+  
+  <script pjax>
+  function leancloudSelector(url) {
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = visitors.getAttribute('id').trim();
+      var title = visitors.getAttribute('data-flag-title').trim();
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+            
+              .catch(error => {
+                console.log('Failed to save visitor count', error);
+              })
+          } else {
+              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.log('Failed to create', error);
+                });
+            
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return element.getAttribute('id').trim();
+      });
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length === 0) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
+            return;
+          }
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            leancloudSelector(url).innerText = time;
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
+            }
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=MtqqV75gTXa8hAGiCtDROthF-MdYXbMMI')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': 'MtqqV75gTXa8hAGiCtDROthF-MdYXbMMI',
+            'X-LC-Key': 'BUbsW8Qk53qKmCs7iWMDlCMn',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+        if (localhost.test(document.URL)) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var id = element.id || '';
+    var src = element.src || '';
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (id !=='') {
+      script.id = element.id;
+    }
+    if (src !== '') {
+      script.src = src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+  <script pjax>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+
+  
+
+  
+    
+      
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
+  <script src="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css">
+
+    
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://blog-yelf.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://yelf.me/notes/math/algebra/algebra-101/";
+    this.page.identifier = "notes/math/algebra/algebra-101/";
+    this.page.title = '代数结构简介：群、环, 域、格、模...';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://blog-yelf.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    (function() {
+      var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
+      if (offsetTop <= 0) {
+        // load directly when there's no a scrollbar
+        window.addEventListener('load', loadComments, false);
+      } else {
+        var disqus_scroll = () => {
+          // offsetTop may changes because of manually resizing browser window or lazy loading images.
+          var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
+          var scrollTop = window.scrollY;
+
+          // pre-load comments a bit? (margin or anything else)
+          if (offsetTop - scrollTop < 60) {
+            window.removeEventListener('scroll', disqus_scroll);
+            loadComments();
+          }
+        };
+        window.addEventListener('scroll', disqus_scroll);
+      }
+    })();
+  
+</script>
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: true,
+    notify: true,
+    appId: 'MtqqV75gTXa8hAGiCtDROthF-MdYXbMMI',
+    appKey: 'BUbsW8Qk53qKmCs7iWMDlCMn',
+    placeholder: 'Leave a comment, receive notifications with your email...',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname
+  });
+}, window.Valine);
+</script>
+
+    </div>
+</body>
+</html>

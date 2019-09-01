@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg?v=7.4.0" color="#222">
+  <link rel="manifest" href="/images/favicon/manifest.json">
+  <meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+  <meta name="google-site-verification" content="jpc-0wXaxN6lM5RYg0sX_ULaFnMnNWjL-EHPb9ihARg">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Ubuntu:300,300italic,400,400italic,700,700italic|Ubuntu Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"width":245},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: true,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="主要内容参考自Hexo的用户文档、Tranquilpeak用户文档及NexT使用文档              注：Hexo的配置文件(整个网站的)直接位于网站目录下，而主题的配置文件则位于主题目录下，文件名都是_config.yml">
+<meta name="keywords" content="website,hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从零开始建立个人博客III：Hexo配置">
+<meta property="og:url" content="https://yelf.me/notes/website/hexo-config/index.html">
+<meta property="og:site_name" content="C&#39;Joy">
+<meta property="og:description" content="主要内容参考自Hexo的用户文档、Tranquilpeak用户文档及NexT使用文档              注：Hexo的配置文件(整个网站的)直接位于网站目录下，而主题的配置文件则位于主题目录下，文件名都是_config.yml">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-22T07:20:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从零开始建立个人博客III：Hexo配置">
+<meta name="twitter:description" content="主要内容参考自Hexo的用户文档、Tranquilpeak用户文档及NexT使用文档              注：Hexo的配置文件(整个网站的)直接位于网站目录下，而主题的配置文件则位于主题目录下，文件名都是_config.yml">
+  <link rel="alternate" href="/atom.xml" title="C'Joy" type="application/atom+xml">
+  <link rel="canonical" href="https://yelf.me/notes/website/hexo-config/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>从零开始建立个人博客III：Hexo配置 | C'Joy</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64070885-1"></script>
+  <script pjax>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-64070885-1');
+    }
+  </script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">C'Joy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">GET (SH)IT DONE</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-microblog">
+      
+    
+
+    <a href="https:\/\/weibo.yelf.me" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-mail-forward"></i> <br>Microblog</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://yelf.me/notes/website/hexo-config/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yelf">
+      <meta itemprop="description" content="读万卷书，行万里路">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="C'Joy">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">从零开始建立个人博客III：Hexo配置
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2016-05-20 17:20:14" itemprop="dateCreated datePublished" datetime="2016-05-20T17:20:14+08:00">2016-05-20</time>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/Website/" itemprop="url" rel="index"><span itemprop="name">Website</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span id="/notes/website/hexo-config/" class="post-meta-item leancloud_visitors" data-flag-title="从零开始建立个人博客III：Hexo配置" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/notes/website/hexo-config/#comments" itemprop="discussionUrl"><span class="post-comments-count disqus-comment-count" data-disqus-identifier="notes/website/hexo-config/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/notes/website/hexo-config/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/notes/website/hexo-config/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>主要内容参考自Hexo的用户文档、<a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md" target="_blank" rel="noopener">Tranquilpeak用户文档</a>及<a href="https://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT使用文档</a></p>
+<div class="note info">
+            <p><strong>注</strong>：Hexo的配置文件(整个网站的)直接位于网站目录下，而主题的配置文件则位于主题目录下，文件名都是<code>_config.yml</code></p>
+          </div>
+<a id="more"></a>
+<h2 id="站点配置"><a class="markdownIt-Anchor" href="#站点配置"></a> 站点配置</h2>
+<ul>
+<li>
+<p>基本信息：站点(Site)、语言(en/zh-cn)、网址(url)及永久链接格式(permalink)</p>
+</li>
+<li>
+<p>更换主题：下载Tranquilpeak主题(注意改文件名)，放到themes目录下，同时在设置中将主题换为tranquilpeak<br>
+更多主题：<code>NexT</code>、<code>React</code>、<code>Cactus</code>、<code>fexo</code>  <a href="https://hexo.io/themes" target="_blank" rel="noopener">Hexo主题</a></p>
+</li>
+<li>
+<p>连接Github：安装hexo-deployer-git，并deploy下写入Github Pages仓库信息</p>
+</li>
+<li>
+<p>开启RSS订阅：安装hexo-generator-feed，并在_config.yml中添加feed项</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#Feed Atom</span><br><span class="line">feed:</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: 20</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>关于<a href="https://hexo.io/zh-cn/docs/asset-folders.html" target="_blank" rel="noopener">资源文件夹(asset folders)</a><br>
+资源文件是指source目录下不发表的文件，如图片、CSS、JavaScript等。例如可在source目录下新建一个images目录用于存放文章中用到的图片，之后便可用相对路径在文章中进行引用。<br>
+此外，还可在设置中开启post_asset_folder，开启后使用命令<code>hexo new [layout] &quot;post-title&quot;</code>创建文章(md文件)时会自动创建同名的文件夹，用于存放图片等资源文件。对于我这种文章多、单篇文章资源文件不多的不适合。</p>
+</li>
+</ul>
+<h2 id="tranquilpeak配置"><a class="markdownIt-Anchor" href="#tranquilpeak配置"></a> Tranquilpeak配置</h2>
+<ul>
+<li>
+<p>侧边栏(Sidear)：添加Weibo图标及链接，内部链接只需给出相对路径</p>
+</li>
+<li>
+<p>头像链接(Header)：默认即可，展示作者信息</p>
+</li>
+<li>
+<p>作者信息(Author)：地址、头像；个人简介及工作信息要到Languages中设置</p>
+</li>
+<li>
+<p>页面调整(Customization)：侧边栏样式、阅读模式、目录页缩略图、封面图片、站点图标、分类/标签/存档页样式</p>
+</li>
+<li>
+<p>集成的服务(Integrated Services)：评论(disqus, duoshuo)、搜索(Swiftype)、统计(google、baidu)、Gravatar</p>
+<ul>
+<li>评论：在disqus官网注册，并设置Add Disqus to Site，之后在 _config.yml 中填写disqus_shortname即可</li>
+<li>站内搜索：在swiftype官网注册、创建并安装搜索引擎，之后在 _config.yml 中填写swiftype_install_key即可</li>
+<li>数据统计：在Google Analytics上设置要统计的站点，之后在 _config.yml 中填写得到的Tracking ID即可<div class="note info">
+            <p>使用Algolia，需要安装额外模块<code>npm install hexo-algoliasearch</code>，且需要每次发布(deploy)前手动索引<code>hexo algolia</code></p>
+          </div>
+<div class="note info">
+            <p>除了使用第三方搜索服务，还可以借助模块<code>hexo-generator-searchdb</code>或<code>hexo-generator-search</code>实现<strong>本地搜索</strong>，Tranquilpeak主题目前不支持。</p>
+          </div>
+</li>
+</ul>
+</li>
+<li>
+<p>开启页面(Enable Pages)：分类、标签、存档三个页面需要手动建立</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;all-categories&quot;</span><br><span class="line">hexo new page &quot;all-tags&quot;</span><br><span class="line">hexo new page &quot;all-archives&quot;</span><br></pre></td></tr></table></figure>
+<p>上述命令会新建分类、标签、存档三个页面(即在source目录下新建all-categories、all-tags、all-archives三个目录)</p>
+</li>
+<li>
+<p>调整字体字号(Fonts)：修改source/_css/utils/_variables.scss，修改后需要自行编译整个主题(需要安装先安装编译所需的所有依赖)</p>
+</li>
+<li>
+<p>404页面个性化(<a href="http://404.md" target="_blank" rel="noopener">404.md</a>)：在source目录下创建404.md文件，并在<code>Front-Matter</code>(后面会介绍)指定permalink: /404.html，之后根据需要自定义该文件即可。<br>
+*相关图片资源放在<code>/source/assets/images</code>下</p>
+</li>
+</ul>
+<h2 id="写作"><a class="markdownIt-Anchor" href="#写作"></a> 写作</h2>
+<h3 id="front-matter"><a class="markdownIt-Anchor" href="#front-matter"></a> Front matter</h3>
+<p>Front matter是指md文件最开始几行，与正文以<code>---</code>分割，用于设置文章标题、发布时间、及标签分类等。<br>
+Hexo标准的Front matter有：<br>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">布局layout、标题title、创建日期date、标签tags、分类categories</span><br><span class="line">更新日期updated、开启或关闭评论comments、链接permalink</span><br></pre></td></tr></table></figure></p>
+<p>Hexo默认会处理全部md及html文件，如果不想让Hexo处理，可以在 Front-Matter 中将layout: 设为 false<br>
+分类及标签的格式为：放在[]内，以逗号或空格分割。两者区别为分类具有层次，先后顺序不可变；标签则没有要求。</p>
+<p>Tranquilpeak主题提供了额外的Front matter用于调整界面，主要的有：</p>
+<ul>
+<li>keywords：为搜索引擎定义关键字</li>
+<li>thumbnailImage : 在索引页展示的缩略图，默认会自动使用coverImage或gallery的第一个图片。</li>
+<li>coverImage : 在文章开头展示的大幅图片</li>
+<li>gallery :  在文章最后图册(fancybox)中展示的图片，格式为：<code>源文件路径 [缩略图路径] [标题]</code></li>
+</ul>
+<h3 id="关于摘要"><a class="markdownIt-Anchor" href="#关于摘要"></a> 关于摘要</h3>
+<p>Tranquilpeak从1.40版本开始，取消了自动摘录功能，要在索引页显示摘要必须在文章中添加标记，否则将会全文展示在索引页。Tranquilpeak提供了<code>&lt;!-- more --&gt;</code>及<code>&lt;!-- excerpt --&gt;</code>两种标记来分割摘要与全文，前者的摘要内容会在文章中显示，而后者的摘要内容不会在文章正文中显示。<br>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">文章开始部分 / 文章摘要</span><br><span class="line">&lt;!--more--&gt; /   &lt;!--excerpt--&gt;</span><br><span class="line">剩余部分    /    文章正文</span><br></pre></td></tr></table></figure></p>
+<h3 id="展示目录"><a class="markdownIt-Anchor" href="#展示目录"></a> 展示目录</h3>
+<p>将<code>&lt;!-- toc--&gt;</code>放在文章中要展示文章目录的位置即可</p>
+<h3 id="tag-plugins"><a class="markdownIt-Anchor" href="#tag-plugins"></a> Tag Plugins</h3>
+<p>Hexo提供了很多标签插件，用于实现引用blockquote、代码高亮codeblock、音视频嵌入iframe、图片调整img等。具体参考<a href="https://hexo.io/zh-cn/docs/tag-plugins.html" target="_blank" rel="noopener">标签插件|Hexo</a><br>
+需要注意的是，对于图片等资源文件，使用正常的Markdown语法<code>![](/example.jpg)</code> 插入时，图片可以在文章中正常显示，但在索引页面可能不能显示。正确的处理方式是使用<code>asset_img</code>标签插件<code></code>具体参考<a href="https://hexo.io/docs/asset-folders.html" target="_blank" rel="noopener">Asset Folder|Hexo</a></p>
+<p>Tranquilpeak主题同样提供了额外的标签插件：</p>
+<ul>
+<li>
+<p>警告 alert，用于显示Tips或Warning</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% alert [class_name] %&#125;   content  &#123;% endalert %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>文本高亮 hl_text：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% hl_text [color_name] %&#125;   content   &#123;% endhl_text %&#125;</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>图片 image：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% image [class_name] group:group-name /path/to/image</span><br><span class="line">[/path/to/thumbnail] [width] [height] [title text] %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>分页的代码块  tabbed_codeblock：在一个代码框中以选项卡的方式包含多段相关代码，如比较不同语言对同一算法的实现</p>
+</li>
+</ul>
+<hr>
+<p><code>2017.8.18更新</code></p>
+<h2 id="next配置"><a class="markdownIt-Anchor" href="#next配置"></a> NexT配置</h2>
+<p>NexT的中文文档非常清晰，具体配置请参考官方文档，这里主要记录几个关键点：</p>
+<ul>
+<li>文章分类、标签页面的名字与Tranquilpeak不同，且需要指定的是<code>type</code>，而不是Tranquilpeak的<code>layout</code></li>
+<li>站内搜索需使用额外模块：使用algolia需<code>npm install hexo-algolia</code>；本地搜索需<code>npm install hexo-generator-searchdb</code></li>
+<li>为显示文章阅读数，可以使用不蒜子统计或者需要使用LeanCloud的服务，后者需注册获取API</li>
+<li>关于公式：NexT内置MathJax支持，需手动开启，且依赖额外的Hexo插件。此外还可设置只对用到公式的页面加载<code>per_page: ture</code>，此时需在插入公式的文章Front Matter中指定<code>mathjax:true</code></li>
+<li>关于摘要：NexT只支持<code>&lt;!--more--&gt;</code>，不支持<code>&lt;!--excerpt--&gt;</code></li>
+<li>关于目录：NexT会自动生成目录，无需单独插入<code>&lt;!-- toc--&gt;</code></li>
+<li>404页面：NexT支持自定义404页面，且提供有公益404代码</li>
+<li>关于置顶：NexT曾经支持过文章置顶，后来又移除了，所以不要想了，改时间是最简单的方法。</li>
+<li>访问统计：NexT主题集成了两种统计访问量的方式，不蒜子和Leancloud。前者的优点是不需要外部服务，直接用脚本实现；而较大的缺点则是本地预览时的访问也计入统计，对于我这种写文章时需要多次预览修改的人，统计结果就不准了。</li>
+<li>此外NexT还支持版权声明、添加友链、开启打赏、微信公众号推荐及动画效果设置、字体设置等众多功能</li>
+<li>可使用代码<code>&lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot; /&gt;</code>使图片突破容器宽度限制，增强视觉效果</li>
+<li>Hexo提供对文章修改日期的支持，设置updated_at为true开启，之后便可在文章Front Matter中设置修改日期，如<code>updated: 2018-01-01 15:00:00</code></li>
+</ul>
+<p>NexT主题同样提供了额外的标签插件：</p>
+<ul>
+<li>
+<p>文本引用居中 centerquote或cq</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% cq %&#125; blah blah blah &#123;% endcq %&#125;</span><br></pre></td></tr></table></figure>
+<p>文本引用居中还可以直接通过HTML代码实现：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span> <span class="attr">class</span>=<span class="string">"blockquote-center"</span>&gt;</span>blah blah blah<span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>信息提示 note，用于显示Tips或Warning</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note [class_name] %&#125; content &#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+<p><code>class_name</code>为颜色样式，可选default, primary, success, info, warning, danger，不写class_name时似乎跟default的还不同😂</p>
+</li>
+</ul>
+<p>提示信息和警告信息显示效果分别为：</p>
+<div class="note info">
+            <p><strong>Tips：</strong> 提示信息</p>
+          </div>
+<div class="note warning">
+            <p><strong>Warning：</strong> 警告信息</p>
+          </div>
+<h2 id="问题及解决"><a class="markdownIt-Anchor" href="#问题及解决"></a> 问题及解决</h2>
+<p><strong>运行Hexo Server没有任何反应，也没有报错</strong><br>
+最终发现是图片文件中有一个指向其他文件夹的链接，而由于我改动过文件名导致上述链接失效了。<br>
+虽然Hexo Server并没有报错，但如果从零开始一点点重建博客，就会发现添加到有问题的文件夹链接时会报错：Unhandled rejection TypeError: expecting an array or an iterable object but got [object Null]</p>
+<p><strong>文章标题中的坑</strong><br>
+<code>title:</code>和标题之间必须有空格；<br>
+不能出现<code>[]</code>,<code>:</code>等几个字符，解决办法是换用其他字符，如<code>-</code>或整个标题加引号。</p>
+<hr>
+<h2 id="域名绑定"><a class="markdownIt-Anchor" href="#域名绑定"></a> 域名绑定</h2>
+<p>在source下创建名为CNAME的文件，写入要绑定的域名：<a href="http://yelf.me">yelf.me</a>(只能写一个)，发布一下(推送到Github Pages仓库)。<br>
+之后到域名解析管理页面：创建CNAME记录，将指向Github Pages地址。<br>
+<code>注1</code>：A记录，将域名指向一个IPv4地址；CNAME记录，将域名指向一个域名。根据Github的帮助文档，如果设置顶级域名(.me就是)必须使用A记录指向Github的服务器(192.30.252.153)，但经测试似乎CNAME记录也是可以的。之后，启用HTTPS时发现CNAME与所需的TXT记录冲突，还是换了A记录。<br>
+<code>注2</code>：也可以使用次级域名，<a href="http://xn--blog-f96g.yelf.me" target="_blank" rel="noopener">如blog.yelf.me</a>，需要同时修改source下CNAME文件中的域名及域名管理下CNAME记录中重定向的域名。其中CNAME记录中重定向的域名不需要写全，只写前缀即可，如blog或www，不使用二级域名时为@。<br>
+<code>注３</code>：我在阿里万网注册的域名，直接使用了阿里云免费的DNS解析<br>
+<a href="https://help.github.com/articles/quick-start-setting-up-a-custom-domain/" target="_blank" rel="noopener">https://help.github.com/articles/quick-start-setting-up-a-custom-domain/</a><br>
+<a href="https://kyle.xlau.org/posts/github-cname.html" target="_blank" rel="noopener">https://kyle.xlau.org/posts/github-cname.html</a></p>
+<h2 id="其他"><a class="markdownIt-Anchor" href="#其他"></a> 其他</h2>
+<p>更多插件/挂件：hexo-renderer-mathjax…<br>
+遇到中文乱码问题，请检查文件编码，保证是UTF-8格式<br>
+Hexo你的博客   <a href="https://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="noopener">https://ibruce.info/2013/11/22/hexo-your-blog/</a><br>
+使用GitHub和Hexo搭建免费静态Blog   <a href="https://wsgzao.github.io/post/hexo-guide/" target="_blank" rel="noopener">https://wsgzao.github.io/post/hexo-guide/</a><br>
+使用Hexo搭建个人博客  <a href="http://mayiwei.com/2014/01/19/hexo-setup/" target="_blank" rel="noopener">http://mayiwei.com/2014/01/19/hexo-setup/</a></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        <div id="reward-container">
+  <div>Donate if you enjoy this content.</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.jpg" alt="yelf WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/alipay.jpg" alt="yelf Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>yelf</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://yelf.me/notes/website/hexo-config/" title="从零开始建立个人博客III：Hexo配置">https://yelf.me/notes/website/hexo-config/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/website/" rel="tag"># website</a>
+            
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/notes/website/hexo-basics/" rel="next" title="从零开始建立个人博客II：Hexo基础">
+                  <i class="fa fa-chevron-left"></i> 从零开始建立个人博客II：Hexo基础
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/notes/website/markdown-basics/" rel="prev" title="从零开始建立个人博客IV：Markdown基础">
+                  从零开始建立个人博客IV：Markdown基础 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+      <div class="comment-button-group">
+        
+          <a class="btn comment-button disqus">disqus</a>
+        
+          <a class="btn comment-button valine">valine</a>
+        
+      </div>
+      
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+        </div>
+      
+        <div class="comment-position valine">
+          <div class="comments" id="comments"></div>
+        </div>
+      
+      <script pjax>
+        (function() {
+          let commentButton = document.querySelectorAll('.comment-button');
+            commentButton.forEach(item => {
+            let commentClass = item.classList[2];
+            item.addEventListener('click', () => {
+              commentButton.forEach(rmActive => rmActive.classList.remove('active'));
+              item.classList.add('active');
+              document.querySelectorAll('.comment-position').forEach(rmActive => rmActive.classList.remove('active'));
+              document.querySelector(`.comment-position.${commentClass}`).classList.add('active');
+              
+                localStorage.setItem('comments_active', commentClass);
+              
+            });
+          });
+          let activeClass = 'valine';
+          
+            activeClass = localStorage.getItem('comments_active') || activeClass;
+          
+          if (activeClass) {
+            let activeButton = document.querySelector(`.comment-button.${activeClass}`);
+            if (activeButton) {
+              activeButton.click();
+            }
+          }
+        })();
+      </script>
+    
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#站点配置"><span class="nav-number">1.</span> <span class="nav-text"> 站点配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tranquilpeak配置"><span class="nav-number">2.</span> <span class="nav-text"> Tranquilpeak配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写作"><span class="nav-number">3.</span> <span class="nav-text"> 写作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#front-matter"><span class="nav-number">3.1.</span> <span class="nav-text"> Front matter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于摘要"><span class="nav-number">3.2.</span> <span class="nav-text"> 关于摘要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#展示目录"><span class="nav-number">3.3.</span> <span class="nav-text"> 展示目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tag-plugins"><span class="nav-number">3.4.</span> <span class="nav-text"> Tag Plugins</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next配置"><span class="nav-number">4.</span> <span class="nav-text"> NexT配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题及解决"><span class="nav-number">5.</span> <span class="nav-text"> 问题及解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域名绑定"><span class="nav-number">6.</span> <span class="nav-text"> 域名绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">7.</span> <span class="nav-text"> 其他</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="yelf">
+  <p class="site-author-name" itemprop="name">yelf</p>
+  <div class="site-description" itemprop="description">读万卷书，行万里路</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">77</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/iyelf/photos" title="Weibo &rarr; https://weibo.com/iyelf/photos" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://instagram.com/yelf.me/" title="Instagram &rarr; https://instagram.com/yelf.me/" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-thumbs-o-up"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/c/PBSSpaceTime" title="https://www.youtube.com/c/PBSSpaceTime" rel="noopener" target="_blank">PBS Space Time</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/c/3Blue1Brown" title="https://www.youtube.com/c/3Blue1Brown" rel="noopener" target="_blank">3B1B</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://brilliant.org" title="https://brilliant.org" rel="noopener" target="_blank">Brilliant</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://multiverse.lamost.org/" title="https://multiverse.lamost.org/" rel="noopener" target="_blank">章鱼喵</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://openmetric.org/multiverse/" title="http://openmetric.org/multiverse/" rel="noopener" target="_blank">时见疏星</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.physixfan.com/" title="https://www.physixfan.com/" rel="noopener" target="_blank">宇宙的心弦</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.changhai.org/" title="https://www.changhai.org/" rel="noopener" target="_blank">卢昌海</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.loyhome.com/" title="https://www.loyhome.com/" rel="noopener" target="_blank">落园</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://thzt.github.io/" title="https://thzt.github.io/" rel="noopener" target="_blank">何幻</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://kexue.fm" title="https://kexue.fm" rel="noopener" target="_blank">科学空间</a>
+        </li>
+      
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2012 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yelf</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a></div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a></div>
+
+        
+
+
+
+
+
+
+  
+  <script pjax>
+  function leancloudSelector(url) {
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = visitors.getAttribute('id').trim();
+      var title = visitors.getAttribute('data-flag-title').trim();
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+            
+              .catch(error => {
+                console.log('Failed to save visitor count', error);
+              })
+          } else {
+              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.log('Failed to create', error);
+                });
+            
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return element.getAttribute('id').trim();
+      });
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length === 0) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
+            return;
+          }
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            leancloudSelector(url).innerText = time;
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
+            }
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=MtqqV75gTXa8hAGiCtDROthF-MdYXbMMI')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': 'MtqqV75gTXa8hAGiCtDROthF-MdYXbMMI',
+            'X-LC-Key': 'BUbsW8Qk53qKmCs7iWMDlCMn',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+        if (localhost.test(document.URL)) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var id = element.id || '';
+    var src = element.src || '';
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (id !=='') {
+      script.id = element.id;
+    }
+    if (src !== '') {
+      script.src = src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+  <script pjax>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+
+  
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://blog-yelf.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://yelf.me/notes/website/hexo-config/";
+    this.page.identifier = "notes/website/hexo-config/";
+    this.page.title = '从零开始建立个人博客III：Hexo配置';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://blog-yelf.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    (function() {
+      var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
+      if (offsetTop <= 0) {
+        // load directly when there's no a scrollbar
+        window.addEventListener('load', loadComments, false);
+      } else {
+        var disqus_scroll = () => {
+          // offsetTop may changes because of manually resizing browser window or lazy loading images.
+          var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
+          var scrollTop = window.scrollY;
+
+          // pre-load comments a bit? (margin or anything else)
+          if (offsetTop - scrollTop < 60) {
+            window.removeEventListener('scroll', disqus_scroll);
+            loadComments();
+          }
+        };
+        window.addEventListener('scroll', disqus_scroll);
+      }
+    })();
+  
+</script>
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: true,
+    notify: true,
+    appId: 'MtqqV75gTXa8hAGiCtDROthF-MdYXbMMI',
+    appKey: 'BUbsW8Qk53qKmCs7iWMDlCMn',
+    placeholder: 'Leave a comment, receive notifications with your email...',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname
+  });
+}, window.Valine);
+</script>
+
+    </div>
+</body>
+</html>

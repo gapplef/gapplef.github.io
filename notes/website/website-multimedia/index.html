@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg?v=7.4.0" color="#222">
+  <link rel="manifest" href="/images/favicon/manifest.json">
+  <meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+  <meta name="google-site-verification" content="jpc-0wXaxN6lM5RYg0sX_ULaFnMnNWjL-EHPb9ihARg">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Ubuntu:300,300italic,400,400italic,700,700italic|Ubuntu Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"width":245},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: true,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="音视频元素 HTML5提供了插入音乐及视频的元素：&amp;lt;video&amp;gt;,&amp;lt;audio&amp;gt;，使用非常简单，可以设置高度宽度等属性。">
+<meta name="keywords" content="website,hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从零开始建立个人博客V：插入音视频">
+<meta property="og:url" content="https://yelf.me/notes/website/website-multimedia/index.html">
+<meta property="og:site_name" content="C&#39;Joy">
+<meta property="og:description" content="音视频元素 HTML5提供了插入音乐及视频的元素：&amp;lt;video&amp;gt;,&amp;lt;audio&amp;gt;，使用非常简单，可以设置高度宽度等属性。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-01T15:37:56.892Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从零开始建立个人博客V：插入音视频">
+<meta name="twitter:description" content="音视频元素 HTML5提供了插入音乐及视频的元素：&amp;lt;video&amp;gt;,&amp;lt;audio&amp;gt;，使用非常简单，可以设置高度宽度等属性。">
+  <link rel="alternate" href="/atom.xml" title="C'Joy" type="application/atom+xml">
+  <link rel="canonical" href="https://yelf.me/notes/website/website-multimedia/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>从零开始建立个人博客V：插入音视频 | C'Joy</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64070885-1"></script>
+  <script pjax>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-64070885-1');
+    }
+  </script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">C'Joy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">GET (SH)IT DONE</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-microblog">
+      
+    
+
+    <a href="https:\/\/weibo.yelf.me" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-mail-forward"></i> <br>Microblog</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://yelf.me/notes/website/website-multimedia/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yelf">
+      <meta itemprop="description" content="读万卷书，行万里路">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="C'Joy">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">从零开始建立个人博客V：插入音视频
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2016-06-16 14:34:23" itemprop="dateCreated datePublished" datetime="2016-06-16T14:34:23+08:00">2016-06-16</time>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/Website/" itemprop="url" rel="index"><span itemprop="name">Website</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span id="/notes/website/website-multimedia/" class="post-meta-item leancloud_visitors" data-flag-title="从零开始建立个人博客V：插入音视频" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/notes/website/website-multimedia/#comments" itemprop="discussionUrl"><span class="post-comments-count disqus-comment-count" data-disqus-identifier="notes/website/website-multimedia/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/notes/website/website-multimedia/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/notes/website/website-multimedia/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="音视频元素"><a class="markdownIt-Anchor" href="#音视频元素"></a> 音视频元素</h3>
+<p>HTML5提供了插入音乐及视频的元素：<code>&lt;video&gt;</code>,<code>&lt;audio&gt;</code>，使用非常简单，可以设置高度宽度等属性。</p>
+<a id="more"></a>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"video.mp4"</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">"music.mp3"</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">autoplay</span> <span class="attr">controls</span> <span class="attr">style</span>=<span class="string">"display:block;margin:auto; text-align: center"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"music.mp3"</span> <span class="attr">type</span>=<span class="string">"audio/mpeg"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<audio src="/multimedia/Simple Plan - Take My Hand.mp3" controls="controls" style="display:block;margin:auto; text-align: center">
+</audio>
+<p>音视频标签的使用简单，但显示效果通常不怎么美观，为实现更美观的效果可以选择使用Hexo标签插件。此外对于video标签，为使插入的视频宽度自适应屏幕需额外配置，具体可参考文章关于iframe的<a href="#typography">更新内容</a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"position:relative;height:0;padding-bottom:56.25%"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">style</span>=<span class="string">"position:absolute;left:0;top:0;width:100%;height:100%"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">src</span>=<span class="string">"video.mp4"</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span> <span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="hexo标签插件"><a class="markdownIt-Anchor" href="#hexo标签插件"></a> Hexo标签插件</h3>
+<p>通过安装额外<a href="https://hexo.io/plugins/index.html" target="_blank" rel="noopener">插件</a>，可以扩展Hexo对多媒体的支持。HTML5的音频播放器有APlayer、cPlayer，视频播放器可以使用DPlayer。<br>
+首先安装插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-tag-aplayer --save</span><br><span class="line">npm install hexo-tag-dplayer --save</span><br></pre></td></tr></table></figure>
+<p>之后便可以使用插件对应的标签插入音视频了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayer title author url [img_url, narrow, autoplay, width:xxx, lrc:xxx] %&#125;</span><br><span class="line">&#123;% dplayer &quot;url=~url_to_video~&quot; &quot;pic=~url_to_image~&quot; &quot;theme=#FADFA3&quot; % &#125;</span><br></pre></td></tr></table></figure>
+<!-- aplayer "Take My Hand" "Simple Plan" "/multimedia/Simple Plan - Take My Hand.mp3" http://p3.music.126.net/u5ku-rzsfoMavtAFIRWKqw==/2531075767175635.jpg -->
+<p><code>注意</code>：aplayer与PJAX不兼容，开启PJAX后，包含aplayer的页面通过索引点击打开，播放器不显示，需要刷新页面(或直接输网址)才正常；而音乐开始播放后切换页面，音乐播放不会停止，但又没有可以控制停止的地方，同样需要刷新页面才正常。</p>
+<h3 id="内联框架iframe"><a class="markdownIt-Anchor" href="#内联框架iframe"></a> 内联框架iframe</h3>
+<p>由于版权问题，网上音视频资源基本都无法获取源文件地址，上述标签插件使用起来还是会比较麻烦，更常见的做法是使用内联框架<code>&lt;iframe&gt;</code>嵌入外部资源。<br>
+iframe使用也非常简单，最重要的是src属性，用于指向资源，除此之外还可调整宽度高度边框等属性。多媒体网站一般都会提供iframe代码，直接将相应代码插入md文件中即可，一般无需额外设置。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"url_to_resource"</span> [<span class="attr">width</span>=<span class="string">"610px"</span> <span class="attr">height</span>=<span class="string">"343px"</span></span></span><br><span class="line"><span class="tag"> <span class="attr">frameborder</span>=<span class="string">"0"</span> <span class="attr">scrolling</span>=<span class="string">"no"</span><span class="attr">...</span>] &gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>此外还可以使用Hexo内置的iframe标签插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% iframe url [width] [height] %&#125;</span><br></pre></td></tr></table></figure>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="//music.163.com/outchain/player?type=0&id=739576121&height=430"></iframe>
+<iframe src="https://embed.ted.com/talks/lang/en/thomas_hellum_the_world_s_most_boring_television_and_why_it_s_hilariously_addictive" frameborder="0" scrolling="no" allowfullscreen></iframe>
+<iframe src="//player.bilibili.com/player.html?aid=1780730&cid=2752913&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<p><s>一个烦心的事是，iframe在Firefox中显示总是有问题，在其他浏览器上就没有问题，比如Chrome或这手机浏览器。在Firefox Nightly也没问题，但即使Firefox更新到Nightly对应的版本后，还是不能正常显示，暂时没搞明白原因。</s></p>
+<hr>
+<p><span id="typography">2018年07月13日更新</span>(关于HTML/CSS知识参考<a href="../website-typography/">VI.网页排版</a>)：</p>
+<p>iframe有一个非常蛋疼的问题(主要是视频，音频问题不大)：</p>
+<ul>
+<li>如果不指定宽度、高度，则默认的视频框是非常小的300px x 150px，只适合手机查看；</li>
+<li>而指定高度、宽度后，又不会自适应缩放，尤其是手机上不能自适应缩小，观感会很差；</li>
+<li>宽度可通过width=&quot;100%&quot;来自适应屏幕宽度；但高度100%没用，自动的话又会是默认的150px，而不是保持视频长宽比进行缩放。</li>
+<li>上面提到的Hexo内置的iframe标签插件也存在该问题</li>
+</ul>
+<p>这个问题似乎很普遍，网上有不少讨论。常见的做法就是将iframe放入一个容器中，并在容器的参数中设定一个高宽比(padding-bottom)，从而实现视频高度随宽度按比例缩放。最后还要在容器外再加一层段落元素<code>&lt;p&gt;...&lt;/p&gt;</code>来换行。具体可参考<a href="https://benmarshall.me/responsive-iframes/" target="_blank" rel="noopener">Responsive IFrames — The Right Way (CSS Only)!</a><br>
+这种做法缺点很明显：你需要在插入iframe代码的地方逐个手动添加容器代码；而且对于不同长宽比的视频还需要定义多个容器来设置不同比例，比如常见的16:9的视频就是56.25%(9/16)，而4:3的视频则是75%(3/4)。不过对于插入视频不多的，这些缺点其实还好。</p>
+<p>还有一种比较理想的做法，是使用jQuery(JavaScript)，具体可参考<a href="https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php" target="_blank" rel="noopener">Fluid Width Video</a>、<a href="http://www.skipser.com/p/2/p/auto-resize-youtube-videos-in-responsive-layout.html" target="_blank" rel="noopener">Make YouTube Videos Auto-Resize in a Responsive Site Layout.</a><br>
+这种做法的缺点就是你至少需要了解一点JavaScript；你也可以引入外部jQuery，但考虑到国内的网络环境还是蛋疼。</p>
+<p>定义CSS</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.videoWrapper</span>&#123;</span></span><br><span class="line">    position: relative;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    height: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="css"><span class="selector-class">.ratio-16-9</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">padding-bottom</span>: 56<span class="selector-class">.25</span>%; <span class="comment">/* 16:9 */</span></span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="css"><span class="selector-class">.ratio-4-3</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">padding-bottom</span>: 75%; <span class="comment">/* 4:3 */</span></span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="css"><span class="selector-class">.videoWrapper</span> <span class="selector-tag">iframe</span>&#123;</span></span><br><span class="line">    position: absolute;</span><br><span class="line">    width: 100% !important;</span><br><span class="line">    height: 100%;</span><br><span class="line">    left: 0;</span><br><span class="line">    top: 0;</span><br><span class="line">&#125; </span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>插入视频</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"videoWrapper ratio-16-9"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">....</span> &gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>还可以将两者直接写在一起</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"position:relative;height:0;padding-bottom:56.25%"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">style</span>=<span class="string">"position:absolute;left:0;top:0;width:100%;height:100%"</span>  <span class="attr">....</span> &gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<style type="text/css">
+.videoWrapper{
+    position: relative;
+    overflow: hidden;
+    height: 0;
+}
+
+.ratio-16-9 {
+    padding-bottom: 56.25%; /* 16:9 */
+    }
+
+.ratio-4-3 {
+    padding-bottom: 75%; /* 4:3 */
+    }
+
+.videoWrapper iframe{
+    position: absolute;
+    width: 100% !important;
+    height: 100%;
+    left: 0;
+    top: 0;
+} 
+</style>
+<p><strong>16:9</strong></p>
+<p><div class="videoWrapper ratio-16-9">
+<iframe src="https://embed.ted.com/talks/lang/en/thomas_hellum_the_world_s_most_boring_television_and_why_it_s_hilariously_addictive" width="854" height="480" frameborder="0" scrolling="no" allowfullscreen></iframe>
+</div></p>
+<p><strong>4:3</strong></p>
+<p><div class="videoWrapper ratio-4-3"> 
+<iframe src="//player.bilibili.com/player.html?aid=1780730&cid=2752913&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div></p>
+<hr>
+<p>2019年09月01日更新<br>
+最新的NexT主题，解决了Bilibili视频尺寸自适应变化的问题，无需上述自定义样式。但需要注意NexT的会强制视频内容的宽度与页面宽度一致，从而与自定义样式不完全兼容：对于Bilibili的视频，由于播放器边框的存在，16:9的视频设置宽高比16:9后实际视频左右会存在黑边；新版NexT在此时会完全无视宽高比，强制视频宽度与页面宽度一致，高度也相应变化，而文字的位置却依然服从设置的宽高比，最终造成文字被视频窗口覆盖。解决办法是清除自定义样式，或者对于16:9的视频宽高比也设置为4:3。对于TED视频却依然不会自适应调整，不过好在TDE视频的iframe代码是自带上述样式的，所以没有问题。</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        <div id="reward-container">
+  <div>Donate if you enjoy this content.</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.jpg" alt="yelf WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/alipay.jpg" alt="yelf Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>yelf</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://yelf.me/notes/website/website-multimedia/" title="从零开始建立个人博客V：插入音视频">https://yelf.me/notes/website/website-multimedia/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/website/" rel="tag"># website</a>
+            
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/enjoy/watching/anime-after-2013/" rel="next" title="新番评论">
+                  <i class="fa fa-chevron-left"></i> 新番评论
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/enjoy/hobby/skateboard-101/" rel="prev" title="滑板入门">
+                  滑板入门 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+      <div class="comment-button-group">
+        
+          <a class="btn comment-button disqus">disqus</a>
+        
+          <a class="btn comment-button valine">valine</a>
+        
+      </div>
+      
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+        </div>
+      
+        <div class="comment-position valine">
+          <div class="comments" id="comments"></div>
+        </div>
+      
+      <script pjax>
+        (function() {
+          let commentButton = document.querySelectorAll('.comment-button');
+            commentButton.forEach(item => {
+            let commentClass = item.classList[2];
+            item.addEventListener('click', () => {
+              commentButton.forEach(rmActive => rmActive.classList.remove('active'));
+              item.classList.add('active');
+              document.querySelectorAll('.comment-position').forEach(rmActive => rmActive.classList.remove('active'));
+              document.querySelector(`.comment-position.${commentClass}`).classList.add('active');
+              
+                localStorage.setItem('comments_active', commentClass);
+              
+            });
+          });
+          let activeClass = 'valine';
+          
+            activeClass = localStorage.getItem('comments_active') || activeClass;
+          
+          if (activeClass) {
+            let activeButton = document.querySelector(`.comment-button.${activeClass}`);
+            if (activeButton) {
+              activeButton.click();
+            }
+          }
+        })();
+      </script>
+    
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#音视频元素"><span class="nav-number">1.</span> <span class="nav-text"> 音视频元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo标签插件"><span class="nav-number">2.</span> <span class="nav-text"> Hexo标签插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联框架iframe"><span class="nav-number">3.</span> <span class="nav-text"> 内联框架iframe</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="yelf">
+  <p class="site-author-name" itemprop="name">yelf</p>
+  <div class="site-description" itemprop="description">读万卷书，行万里路</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">77</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/iyelf/photos" title="Weibo &rarr; https://weibo.com/iyelf/photos" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://instagram.com/yelf.me/" title="Instagram &rarr; https://instagram.com/yelf.me/" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-thumbs-o-up"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/c/PBSSpaceTime" title="https://www.youtube.com/c/PBSSpaceTime" rel="noopener" target="_blank">PBS Space Time</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/c/3Blue1Brown" title="https://www.youtube.com/c/3Blue1Brown" rel="noopener" target="_blank">3B1B</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://brilliant.org" title="https://brilliant.org" rel="noopener" target="_blank">Brilliant</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://multiverse.lamost.org/" title="https://multiverse.lamost.org/" rel="noopener" target="_blank">章鱼喵</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://openmetric.org/multiverse/" title="http://openmetric.org/multiverse/" rel="noopener" target="_blank">时见疏星</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.physixfan.com/" title="https://www.physixfan.com/" rel="noopener" target="_blank">宇宙的心弦</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.changhai.org/" title="https://www.changhai.org/" rel="noopener" target="_blank">卢昌海</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.loyhome.com/" title="https://www.loyhome.com/" rel="noopener" target="_blank">落园</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://thzt.github.io/" title="https://thzt.github.io/" rel="noopener" target="_blank">何幻</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://kexue.fm" title="https://kexue.fm" rel="noopener" target="_blank">科学空间</a>
+        </li>
+      
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2012 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yelf</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a></div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a></div>
+
+        
+
+
+
+
+
+
+  
+  <script pjax>
+  function leancloudSelector(url) {
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = visitors.getAttribute('id').trim();
+      var title = visitors.getAttribute('data-flag-title').trim();
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+            
+              .catch(error => {
+                console.log('Failed to save visitor count', error);
+              })
+          } else {
+              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.log('Failed to create', error);
+                });
+            
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return element.getAttribute('id').trim();
+      });
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length === 0) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
+            return;
+          }
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            leancloudSelector(url).innerText = time;
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
+            }
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=MtqqV75gTXa8hAGiCtDROthF-MdYXbMMI')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': 'MtqqV75gTXa8hAGiCtDROthF-MdYXbMMI',
+            'X-LC-Key': 'BUbsW8Qk53qKmCs7iWMDlCMn',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+        if (localhost.test(document.URL)) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var id = element.id || '';
+    var src = element.src || '';
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (id !=='') {
+      script.id = element.id;
+    }
+    if (src !== '') {
+      script.src = src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+  <script pjax>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+
+  
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://blog-yelf.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://yelf.me/notes/website/website-multimedia/";
+    this.page.identifier = "notes/website/website-multimedia/";
+    this.page.title = '从零开始建立个人博客V：插入音视频';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://blog-yelf.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    (function() {
+      var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
+      if (offsetTop <= 0) {
+        // load directly when there's no a scrollbar
+        window.addEventListener('load', loadComments, false);
+      } else {
+        var disqus_scroll = () => {
+          // offsetTop may changes because of manually resizing browser window or lazy loading images.
+          var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
+          var scrollTop = window.scrollY;
+
+          // pre-load comments a bit? (margin or anything else)
+          if (offsetTop - scrollTop < 60) {
+            window.removeEventListener('scroll', disqus_scroll);
+            loadComments();
+          }
+        };
+        window.addEventListener('scroll', disqus_scroll);
+      }
+    })();
+  
+</script>
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: true,
+    notify: true,
+    appId: 'MtqqV75gTXa8hAGiCtDROthF-MdYXbMMI',
+    appKey: 'BUbsW8Qk53qKmCs7iWMDlCMn',
+    placeholder: 'Leave a comment, receive notifications with your email...',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname
+  });
+}, window.Valine);
+</script>
+
+    </div>
+</body>
+</html>

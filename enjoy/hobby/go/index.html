@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg?v=7.4.0" color="#222">
+  <link rel="manifest" href="/images/favicon/manifest.json">
+  <meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+  <meta name="google-site-verification" content="jpc-0wXaxN6lM5RYg0sX_ULaFnMnNWjL-EHPb9ihARg">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Ubuntu:300,300italic,400,400italic,700,700italic|Ubuntu Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"width":245},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: true,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="围棋入门(完整版)">
+<meta name="keywords" content="go">
+<meta property="og:type" content="article">
+<meta property="og:title" content="围棋入门">
+<meta property="og:url" content="https://yelf.me/enjoy/hobby/go/index.html">
+<meta property="og:site_name" content="C&#39;Joy">
+<meta property="og:description" content="围棋入门(完整版)">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-12-28T01:24:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="围棋入门">
+<meta name="twitter:description" content="围棋入门(完整版)">
+  <link rel="alternate" href="/atom.xml" title="C'Joy" type="application/atom+xml">
+  <link rel="canonical" href="https://yelf.me/enjoy/hobby/go/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>围棋入门 | C'Joy</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64070885-1"></script>
+  <script pjax>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-64070885-1');
+    }
+  </script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">C'Joy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">GET (SH)IT DONE</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-microblog">
+      
+    
+
+    <a href="https:\/\/weibo.yelf.me" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-mail-forward"></i> <br>Microblog</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://yelf.me/enjoy/hobby/go/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yelf">
+      <meta itemprop="description" content="读万卷书，行万里路">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="C'Joy">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">围棋入门
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2014-04-13 18:00:00" itemprop="dateCreated datePublished" datetime="2014-04-13T18:00:00+08:00">2014-04-13</time>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Enjoy/" itemprop="url" rel="index"><span itemprop="name">Enjoy</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Enjoy/Hobby/" itemprop="url" rel="index"><span itemprop="name">Hobby</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span id="/enjoy/hobby/go/" class="post-meta-item leancloud_visitors" data-flag-title="围棋入门" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/enjoy/hobby/go/#comments" itemprop="discussionUrl"><span class="post-comments-count disqus-comment-count" data-disqus-identifier="enjoy/hobby/go/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/enjoy/hobby/go/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/enjoy/hobby/go/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p><a href="http://bbs.zdic.net/thread-117074-1-1.html" target="_blank" rel="noopener">围棋入门(完整版)</a></p>
+</blockquote>
+<a id="more"></a>
+<style type="text/css">
+h3{text-align: center;} 
+</style>
+<h3 id="入门概念"><a class="markdownIt-Anchor" href="#入门概念"></a> 入门概念</h3>
+<p><strong>一、浅说围棋</strong></p>
+<ul>
+<li>19×19：左上角开始起，横 一~十九，竖 1~19，先竖后横</li>
+<li>星/星位、天元; 上 下 左 右 左上 左下 右上 右下 中腹</li>
+<li>黑棋181枚，白棋180枚</li>
+</ul>
+<p><strong>二、行棋规则与胜负计算</strong></p>
+<ul>
+<li>终局：棋盘上每一个交叉点的归属均已完全确定</li>
+<li>分先：双方轮流执黑先行，终局计算时执黑一方贴出2(3/4)子</li>
+<li>让先：水平略低一方执黑先行，终局计算时不帖子</li>
+<li>让子：水平低一方执黑，先在棋盘特定位置放置若干子，终局计算时贴还让子数目的一半</li>
+<li>计算胜负：首先要把双方的死棋拿掉，然后看双方占地大小</li>
+</ul>
+<p><strong>三、吃子</strong>：气、吃、提、打/打吃</p>
+<p><strong>四、禁着点</strong>：针对一方而言，不能下子或下子后无意义或下子后对己方有害无益</p>
+<p><strong>五、眼与活棋</strong>：眼、假眼、活棋(两个或两个以上眼)、双活 公气</p>
+<ul>
+<li><code>活棋</code>是永远不可能被提掉的棋</li>
+<li>三个或三个以上的空交叉点组成的大眼一般可以做成两个或两个以上的眼</li>
+</ul>
+<p><strong>六、死棋</strong>：被对方棋子包围而没有两个眼来作活的棋(迟早会被对方吃掉)</p>
+<ul>
+<li>棋子在对方包围中没有气，需被提掉</li>
+<li>虽然有气，但没有眼位，无法作成活棋</li>
+<li>虽然有一个眼位，但作不出第二个，无法作成活棋；有时看起来有两个甚至多个眼位，但其实可能都是假眼</li>
+</ul>
+<p><strong>七、反提</strong>：在连续的提子中，只有一个回合，又不能构成“打劫”，这便是“反提”</p>
+<p><strong>八、打劫/劫争</strong></p>
+<ul>
+<li>对局中一方“提”一子(“提劫”)后，另一方在可以回提的情况下不能马上回提，要先在别处下一着(“寻劫”)，待对方应一手之后再回“提”(“提劫”)。双方反复寻劫、提劫争夺，直到最后“消劫”(一方把劫争的空位填上)为止。打劫规则可以看作是更广义的“禁止全局同形再现”规则的一个特例</li>
+<li>劫材：“打劫”的材料，在打劫过程中用于寻劫的位置。为在打劫中获利，寻劫时要迫使对方做出应对而不能去消劫，因此劫材很重要。</li>
+<li>抛劫：也称“扑劫”、“投劫”，主动投入对方的虎口中(没有提去对方的子)造成劫争，迫使对方打劫</li>
+<li>在围棋对局中，形成打劫的机会是很多的，但并非所有打劫的棋形双方都立即开始打劫。决定是否开始打劫，要根据对全局的形势、劫材的多少、此劫对双方的轻重关系等多种因素来进行综合判断，决定是否开劫。高手下棋常常都会保留一些先手作为“劫材”，一旦形成打劫，劫材多的一方打胜的可能性较大。</li>
+</ul>
+<h3 id="礼仪常识"><a class="markdownIt-Anchor" href="#礼仪常识"></a> 礼仪常识</h3>
+<p>以裁判方向为标准，右手方为上手方，左手方为下手方：上手方抓白子，下手方取1(或2)枚黑子猜先<br>
+黑棋的一手棋如果是占角的话，则应下在右上角</p>
+<h3 id="收官技巧"><a class="markdownIt-Anchor" href="#收官技巧"></a> 收官技巧</h3>
+<p>一句话：双方先手，势在必争；单方先手，把握时机；双方后手，从大至小。</p>
+<h4 id="官子种类及收官原则"><a class="markdownIt-Anchor" href="#官子种类及收官原则"></a> 官子种类及收官原则</h4>
+<p>收官，又称作官子，是围棋比赛中三个阶段(布局、中盘、官子)中的最后一个阶段，指双方经过中盘的战斗，地盘及死活已经大致确定之后，确立竞逐边界的阶段。布局和中盘以各种不同形式表现出个人风格，棋手可根据偏好自行选择。而收官阶段则只有精细的计算，找出唯一一条最好的路，未能依此正确的方式走，则很可能遭受目数的损失。<br>
+<strong>1、目数的计算</strong><br>
+目：棋盘上一方棋子所围出地域(“空”)的交叉点称为“目”，目的数量叫作“目数”。<br>
+地：活棋所包围的目数和活棋本身之总和称为“地”，决定围棋的胜负。<br>
+提掉对方一子，对方棋子所占领的交叉点就少了一个，而我方则多了一个。因此，每提掉对方一子或对方有一死子时，就应加算1目，也就是说，等于2目。</p>
+<p><strong>2、不同种类官子的收官原则</strong><br>
+先手官子即是除去了本身这手棋的利益之外，对方若不应时，它兼有下一着能取得更大利益的手段，所以对方不得不应。后手官子即是除去本身这手棋的利益之外，对方即使不应，它也没有下一着的第二利益，所以对方可以不应而它投。<br>
+据此官子可以分为三种类型：<br>
+(1)双方后手：无论哪方下都是后手。  从大到小<br>
+(2)双方先手：无论哪方下都是先手。   双方必争<br>
+(3)单方先手：一方下是先手，另一方下是后手，又叫作逆先手。  掌握时机</p>
+<p><strong>3、逆收官子的原则</strong><br>
+在考虑逆收时，要先分析一下所余官子的分布情况，算出先行官子的价值。如果逆收官子的目数大于先行官子的价值，那么逆收有利，反之则逆收不利。</p>
+<h4 id="官子的计算方法"><a class="markdownIt-Anchor" href="#官子的计算方法"></a> 官子的计算方法</h4>
+<p>官子的计算方法，一般都被采用“出入计算法”。出入计算法是从目数的损得进行计算。对于同一个官子，首先设想黑白双方正确应对后的局面，然后根据这个设想的结果进行比较，双方增减之和就是这个官子的目数。<br>
+1、单方目数增减的计算 &lt;设想黑先和白先后的局面，然后将双方增减之差相加&gt;<br>
+2 、双方数目增减的计算 &lt;关键是是正确设想双方的应对&gt;<br>
+3、官子的后继手段及其目数增减<br>
+有些官子除本身所得之外，还有后继手段可进一步获利。这个再获的第二利益也分后手和先手。<br>
+(1)后手第二利益：按折半的方法计算，再加上第一利益，即为这个官子的全部价值。<br>
+(2)先手第二利益：把第一与第二利益相加，二者之和即为这个官子的全部价值(它的第二利益不必花费手数，所以没有必要折半计算)。<br>
+4、官子的次序<br>
+(1)同类型官子次序：从大至小<br>
+(2)不同类型官子次序 ：双方先手、单方先手、双方后手</p>
+<hr>
+<p><a href="https://zh.wikipedia.org/zh-cn/%E5%9B%B4%E6%A3%8B%E5%8D%81%E8%AF%80" target="_blank" rel="noopener">围棋十诀</a><br>
+一．不得贪胜。 	二．入界宜缓。 	三．攻彼顾我。 	四．弃子争先。 	五．舍小就大。<br>
+六．逢危须弃。 	七．慎勿轻速。 	八．动须相应。 	九．彼强自保。 	十．势孤取和。</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        <div id="reward-container">
+  <div>Donate if you enjoy this content.</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.jpg" alt="yelf WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/alipay.jpg" alt="yelf Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>yelf</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://yelf.me/enjoy/hobby/go/" title="围棋入门">https://yelf.me/enjoy/hobby/go/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/go/" rel="tag"># go</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/enjoy/hobby/taichi/" rel="next" title="二十四式简化太极">
+                  <i class="fa fa-chevron-left"></i> 二十四式简化太极
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/enjoy/hobby/go-terms/" rel="prev" title="围棋术语">
+                  围棋术语 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+      <div class="comment-button-group">
+        
+          <a class="btn comment-button disqus">disqus</a>
+        
+          <a class="btn comment-button valine">valine</a>
+        
+      </div>
+      
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+        </div>
+      
+        <div class="comment-position valine">
+          <div class="comments" id="comments"></div>
+        </div>
+      
+      <script pjax>
+        (function() {
+          let commentButton = document.querySelectorAll('.comment-button');
+            commentButton.forEach(item => {
+            let commentClass = item.classList[2];
+            item.addEventListener('click', () => {
+              commentButton.forEach(rmActive => rmActive.classList.remove('active'));
+              item.classList.add('active');
+              document.querySelectorAll('.comment-position').forEach(rmActive => rmActive.classList.remove('active'));
+              document.querySelector(`.comment-position.${commentClass}`).classList.add('active');
+              
+                localStorage.setItem('comments_active', commentClass);
+              
+            });
+          });
+          let activeClass = 'valine';
+          
+            activeClass = localStorage.getItem('comments_active') || activeClass;
+          
+          if (activeClass) {
+            let activeButton = document.querySelector(`.comment-button.${activeClass}`);
+            if (activeButton) {
+              activeButton.click();
+            }
+          }
+        })();
+      </script>
+    
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#入门概念"><span class="nav-number">1.</span> <span class="nav-text"> 入门概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#礼仪常识"><span class="nav-number">2.</span> <span class="nav-text"> 礼仪常识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收官技巧"><span class="nav-number">3.</span> <span class="nav-text"> 收官技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#官子种类及收官原则"><span class="nav-number">3.1.</span> <span class="nav-text"> 官子种类及收官原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#官子的计算方法"><span class="nav-number">3.2.</span> <span class="nav-text"> 官子的计算方法</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="yelf">
+  <p class="site-author-name" itemprop="name">yelf</p>
+  <div class="site-description" itemprop="description">读万卷书，行万里路</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">77</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/iyelf/photos" title="Weibo &rarr; https://weibo.com/iyelf/photos" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://instagram.com/yelf.me/" title="Instagram &rarr; https://instagram.com/yelf.me/" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-thumbs-o-up"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/c/PBSSpaceTime" title="https://www.youtube.com/c/PBSSpaceTime" rel="noopener" target="_blank">PBS Space Time</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/c/3Blue1Brown" title="https://www.youtube.com/c/3Blue1Brown" rel="noopener" target="_blank">3B1B</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://brilliant.org" title="https://brilliant.org" rel="noopener" target="_blank">Brilliant</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://multiverse.lamost.org/" title="https://multiverse.lamost.org/" rel="noopener" target="_blank">章鱼喵</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://openmetric.org/multiverse/" title="http://openmetric.org/multiverse/" rel="noopener" target="_blank">时见疏星</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.physixfan.com/" title="https://www.physixfan.com/" rel="noopener" target="_blank">宇宙的心弦</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.changhai.org/" title="https://www.changhai.org/" rel="noopener" target="_blank">卢昌海</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.loyhome.com/" title="https://www.loyhome.com/" rel="noopener" target="_blank">落园</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://thzt.github.io/" title="https://thzt.github.io/" rel="noopener" target="_blank">何幻</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://kexue.fm" title="https://kexue.fm" rel="noopener" target="_blank">科学空间</a>
+        </li>
+      
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2012 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yelf</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a></div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a></div>
+
+        
+
+
+
+
+
+
+  
+  <script pjax>
+  function leancloudSelector(url) {
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = visitors.getAttribute('id').trim();
+      var title = visitors.getAttribute('data-flag-title').trim();
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+            
+              .catch(error => {
+                console.log('Failed to save visitor count', error);
+              })
+          } else {
+              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.log('Failed to create', error);
+                });
+            
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return element.getAttribute('id').trim();
+      });
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length === 0) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
+            return;
+          }
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            leancloudSelector(url).innerText = time;
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
+            }
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=MtqqV75gTXa8hAGiCtDROthF-MdYXbMMI')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': 'MtqqV75gTXa8hAGiCtDROthF-MdYXbMMI',
+            'X-LC-Key': 'BUbsW8Qk53qKmCs7iWMDlCMn',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+        if (localhost.test(document.URL)) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var id = element.id || '';
+    var src = element.src || '';
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (id !=='') {
+      script.id = element.id;
+    }
+    if (src !== '') {
+      script.src = src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+  <script pjax>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+
+  
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://blog-yelf.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://yelf.me/enjoy/hobby/go/";
+    this.page.identifier = "enjoy/hobby/go/";
+    this.page.title = '围棋入门';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://blog-yelf.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    (function() {
+      var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
+      if (offsetTop <= 0) {
+        // load directly when there's no a scrollbar
+        window.addEventListener('load', loadComments, false);
+      } else {
+        var disqus_scroll = () => {
+          // offsetTop may changes because of manually resizing browser window or lazy loading images.
+          var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
+          var scrollTop = window.scrollY;
+
+          // pre-load comments a bit? (margin or anything else)
+          if (offsetTop - scrollTop < 60) {
+            window.removeEventListener('scroll', disqus_scroll);
+            loadComments();
+          }
+        };
+        window.addEventListener('scroll', disqus_scroll);
+      }
+    })();
+  
+</script>
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: true,
+    notify: true,
+    appId: 'MtqqV75gTXa8hAGiCtDROthF-MdYXbMMI',
+    appKey: 'BUbsW8Qk53qKmCs7iWMDlCMn',
+    placeholder: 'Leave a comment, receive notifications with your email...',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname
+  });
+}, window.Valine);
+</script>
+
+    </div>
+</body>
+</html>

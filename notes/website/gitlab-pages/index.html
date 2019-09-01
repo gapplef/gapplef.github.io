@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg?v=7.4.0" color="#222">
+  <link rel="manifest" href="/images/favicon/manifest.json">
+  <meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+  <meta name="google-site-verification" content="jpc-0wXaxN6lM5RYg0sX_ULaFnMnNWjL-EHPb9ihARg">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Ubuntu:300,300italic,400,400italic,700,700italic|Ubuntu Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"width":245},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: true,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="尝试将博客从GitHub迁移到GitLab，本以为完全没有障碍，一样操作就行了，最后却发现两者的思路完全不一样，而且到处都是git的坑😂">
+<meta name="keywords" content="website,gitlab,github">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从零开始建立个人博客IX：由GitHub迁移到GitLab">
+<meta property="og:url" content="https://yelf.me/notes/website/gitlab-pages/index.html">
+<meta property="og:site_name" content="C&#39;Joy">
+<meta property="og:description" content="尝试将博客从GitHub迁移到GitLab，本以为完全没有障碍，一样操作就行了，最后却发现两者的思路完全不一样，而且到处都是git的坑😂">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-08-29T02:28:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从零开始建立个人博客IX：由GitHub迁移到GitLab">
+<meta name="twitter:description" content="尝试将博客从GitHub迁移到GitLab，本以为完全没有障碍，一样操作就行了，最后却发现两者的思路完全不一样，而且到处都是git的坑😂">
+  <link rel="alternate" href="/atom.xml" title="C'Joy" type="application/atom+xml">
+  <link rel="canonical" href="https://yelf.me/notes/website/gitlab-pages/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>从零开始建立个人博客IX：由GitHub迁移到GitLab | C'Joy</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64070885-1"></script>
+  <script pjax>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-64070885-1');
+    }
+  </script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">C'Joy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">GET (SH)IT DONE</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-microblog">
+      
+    
+
+    <a href="https:\/\/weibo.yelf.me" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-mail-forward"></i> <br>Microblog</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://yelf.me/notes/website/gitlab-pages/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yelf">
+      <meta itemprop="description" content="读万卷书，行万里路">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="C'Joy">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">从零开始建立个人博客IX：由GitHub迁移到GitLab
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2018-05-20 10:21:13" itemprop="dateCreated datePublished" datetime="2018-05-20T10:21:13+08:00">2018-05-20</time>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/Website/" itemprop="url" rel="index"><span itemprop="name">Website</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span id="/notes/website/gitlab-pages/" class="post-meta-item leancloud_visitors" data-flag-title="从零开始建立个人博客IX：由GitHub迁移到GitLab" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/notes/website/gitlab-pages/#comments" itemprop="discussionUrl"><span class="post-comments-count disqus-comment-count" data-disqus-identifier="notes/website/gitlab-pages/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/notes/website/gitlab-pages/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/notes/website/gitlab-pages/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>尝试将博客从GitHub迁移到GitLab，本以为完全没有障碍，一样操作就行了，最后却发现两者的思路完全不一样，而且到处都是git的坑😂</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="gitlab-pages简介"><a class="markdownIt-Anchor" href="#gitlab-pages简介"></a> GitLab Pages简介</h3>
+<p>GitLab与Github类似，而且对开源社区更友好，很多大型的开源项目，如GNOME、Debian都在向GitLab迁移。GitLab每个代码库空间限制为10G，文件大小不限，仓库数量不限，包括私有仓库的数量；需要注意的是GitLab CI/CD限制仓库大小1G，单文件100M，GitLab Pages因为要使用CI/CD也受此限制<a href="https://docs.gitlab.com/ee/user/gitlab_com/" target="_blank" rel="noopener"><sup>1</sup></a>。作为对比，Github每个代码库空间软性限制1G，单文件100M，且私有仓库为付费项目。</p>
+<p>与Github中类似，用户页面(User Page)对应的项目名必须是<code>username.gitlab.io</code>，这样才可以通过网址 <code>https://username.gitlab.io</code> 访问；而其他名字的项目，开启项目页面(Project Page)后，访问网址为 <code>https://username.gitlab.io/projectname</code> 。</p>
+<p>但GitLab中建立Pages的思路与GitHub完全不同。对于Github，使用Hexo的流程为，首先在本地安装各种Hexo插件，之后运行<code>Hexo generate</code>在本地生成各种页面，最后再执行<code>Hexo deploy</code>部署到远程，就可以访问了。整个过程无需git操作，在<code>_config.yml</code>中设置好仓库并配置好SSH密钥，Hexo会自动调用Git进行操作，git目录是位于博客目录下的<code>.deploy_git</code>。</p>
+<p>而对于GitLab，由于其提供了基于Docker的持续集成/持续部署(CI/CD)服务，上述所有操作都可以在云端实现，而无需本地操作，包括插件安装都在云端完成。而为此需要配置一个名为<code>.gitlab-ci.yml</code>的文件，告诉GitLab所需要执行的操作，内容为执行的脚本及处理的文件等。整个过程本地完全无需<code>hexo generate</code>和<code>hexo deploy</code>，而是将博客源文件作为git管理的代码，完全使用git操作。将博客目录推送到GitLab上后，会由一个名为<code>GitLab-Runner</code>的程序在云端根据<code>.gitlab-ci.yml</code>的内容处理你的源文件。与在本地类似，这个过程需要需要2-3分钟。</p>
+<p>使用时，最好在本地修改好后再push，类似于先在本地做好代码的调试，再推送到代码库，而不要频繁修改推送(可以在本地多次<code>commit</code>，然后一次性<code>push</code>)。因为每次推送都会自动触发<code>Runner</code>对文件的处理，由于是免费公共资源，短时间内使用次数太多，会出现排队，需等待较长时间。为了实时查看效果，方便编辑，可以在本地<code>hexo s</code>来预览，只是不要在本地执行<code>Hexo g -d</code>。</p>
+<p>总结起来就是：Github需要在本地手动执行Hexo，生成并部署网页；而GitLab则只需提供源文件，在云端自动生成及部署。</p>
+<p>两种思路其实各有优劣：</p>
+<ul>
+<li>GitHub的方式，需要用户在本地安装Node.js、Hexo及相关插件，但是操作完全在本地，更加直观。而且整个过程只需要使用基本的Hexo命令，不需要了解太深入的Git知识，对于一般用户更友好。不好的是最终推送到代码库中的内容是Hexo处理生成的网页，而并非原文件，不符合Git管理源代码的思路。</li>
+<li>GitLab的方式，Hexo对文件的处理部署都在云端执行，不是很直观。用户甚至不需要在本地安装任何Node.js、Hexo的东西，但为了方便预览、编辑，还是装上了比较好。整个操作完全由Git完成，需要用户熟悉Git的用法，其思路本质就是Git管理源码的思路，最终仓库内容与本地源文件一致。</li>
+</ul>
+<h3 id="创建pages"><a class="markdownIt-Anchor" href="#创建pages"></a> 创建Pages</h3>
+<ol>
+<li>
+<p>创建GitLab账号，并在账号设置中提供SSH公钥</p>
+</li>
+<li>
+<p>创建新的项目，项目名称为<code>username.gitlab.io</code></p>
+</li>
+<li>
+<p>创建新文件夹作为博客目录并执行<code>hexo init</code>，或者直接复制原Hexo目录，之后在该目录下执行下面的命令(注意修改命令中GitLab仓库地址)：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin git@gitlab.com:yelf/yelf.gitlab.io.git</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;Initial blog&quot;</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>在本地创建<code>.gitlab-ci.yml</code>文件，并push到远程仓库(也可以在项目网页上创建，并pull到本地)<br>
+模板可到项目网页<code>Set up CI/CD</code> 或<code>Add New File</code>&gt; <code>Template</code>: .gitlab-ci.yml  &gt; <code>Apply a template</code>: Hexo查看<br>
+个人的<code>.gitlab-ci.yml</code>文件如下：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">image: node:8.11.1</span><br><span class="line">pages:</span><br><span class="line">  script:</span><br><span class="line">  - npm install</span><br><span class="line">  - ./node_modules/hexo/bin/hexo generate</span><br><span class="line">  artifacts:</span><br><span class="line">	paths:</span><br><span class="line">	- public</span><br><span class="line">  cache:</span><br><span class="line">	paths:</span><br><span class="line">	  - node_modules</span><br><span class="line">	key: project</span><br><span class="line">  only:</span><br><span class="line">  - master</span><br></pre></td></tr></table></figure>
+<p>与默认模板的唯一区别是修改了npm的版本，注意虽然我用到了很多Hexo插件，但却并未在这里一行行安装，这是因为<code>npm install</code> 会根据package.json文件内容自动安装全部所需插件及相关依赖，而如何设置package.json文件内容，可参考下文。<br>
+在本地创建<code>.gitlab-ci.yml</code>文件后</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;Add .gitlab-ci.yml&quot;</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>在添加完<code>.gitlab-ci.yml</code>，GitLab便会自动开始处理博客，等待2-3分钟即可，可到CI/CD下查看任务进度情况。任务完成后便可通过username.gitlab.io访问博客页面。</p>
+</li>
+<li>
+<p>之后添加博客文件都应直接采用git的管理方式，而不能使用<code>hexo g -d</code>。</p>
+</li>
+</ol>
+<h3 id="问题及解决"><a class="markdownIt-Anchor" href="#问题及解决"></a> 问题及解决</h3>
+<ul>
+<li>对于GitLab，如果仍按照Github的方式操作，会遇到CI/CD的脚本执行失败，无法生成页面；如果选择<code>.gitlab-ci.yml</code>为<code>HTML</code>可以部署成功，但页面没有主题，显示混乱。因此换到了GitLab就按照GitLab的思路操作，不要在本地执行<code>Hexo g -d</code>，用git管理文件(可以在本地<code>Hexo s</code>预览)。</li>
+<li>GitLab会在云端执行hexo g后自动部署，无需在<code>.gitlab-ci.yml</code>中写入hexo d，因此可以在博客设置<code>_config.yml</code>中将deploy部分直接注释掉。当然不注释也没事，这些行不会起作用。</li>
+<li>整个博客目录下的<code>.gitignore</code>中包含有node_modules/、public/、.deploy*/目录，git push时会自动忽略这些目录，推送到远程的只有scaffolds、source、themes目录下内容。</li>
+<li>NexT主题的下的<code>.gitignore</code>中包含有外部库source/lib/*目录，因此git push时会忽略这些外部依赖库，比如facybox。最终会造成远程仓库不含这些依赖库，博客显示异常，注意移除这部分内容。</li>
+<li>此外如果使用git clone的方式下载的主题或外部库时，比如fancybox，需要手动删除对应的.git目录，因为在.git目录下最好不要出现.git目录，会提示<code>warning: adding embedded git repository: ....</code></li>
+<li>上述两个问题会造成NexT主题开启fancybox后，博客页面一片空白，无法正常显示。</li>
+<li>对于Hexo插件：直接在本地目录下安装插件后，package.json会自动修改，包含相应插件。因此直接在本地安装好全部扩展后，虽然node_modules/不会上传到远程仓库，但在CI/CD时<code>npm install</code> 会根据package.json文件内容自动安装全部所需插件及相关依赖，无需在<code>.gitlab-ci.yml</code>中一行行安装。</li>
+<li>GitHub情况下，由于是在本地执行<code>hexo g -d</code>，对于软链接图片，会沿着链接找到原始图片资源，将其复制到要推送的public目录，并推送到仓库；对于GitLab，则是先推送再执行<code>hexo g</code>，推送到云端的只是一个链接文件(夹)，没有原始资源，最终图片会无法显示。</li>
+<li>最后，对于GitLab，当图片资源较大时(~1M)，会无法显示。我是在所有东西都弄好后发现的这个问题，暂不清楚原因，也不知道如何解决，因此最终我又回到了GitHub，白忙活了😂。</li>
+</ul>
+<h3 id="github迁移"><a class="markdownIt-Anchor" href="#github迁移"></a> GitHub迁移</h3>
+<p>根据上面的内容，总结下从GitHub迁移到GitLab的步骤，直接复制之前的Hexo目录，之后要：</p>
+<ul>
+<li>移除NexT主题下的<code>.gitignore</code>中涉及外部库的内容<code>source/lib/*</code>，从而确保外部依赖库可以被正确推送；</li>
+<li>除了Hexo主目录中的.git，删除目录下的所有多余的.git目录；</li>
+<li>参考GitLab所给模板，添加<code>.gitlab-ci.yml</code>文件；</li>
+<li>最后在博客设置<code>_config.yml</code>中将deploy部分直接注释掉(不注释也没事，这些行不会起作用)；</li>
+<li>将图片资源中的链接文件(夹)替换为正常文件(夹)。</li>
+</ul>
+<h3 id="自定义域名"><a class="markdownIt-Anchor" href="#自定义域名"></a> 自定义域名</h3>
+<ul>
+<li>添加DNS解析<br>
+指向根域名：添加A记录，记录值为<code>52.167.214.135</code><br>
+指向次级域名：添加CNAME记录，记录值为<code>username.gitlab.io</code></li>
+<li>在GitLab Pages项目设置中指定域名：<code>Settings</code> &gt; <code>Pages</code>中添加自定义域名</li>
+<li>域名验证：根据提示添加DNS解析TXT记录，用于验证对域名的所有权</li>
+</ul>
+<h3 id="开启https"><a class="markdownIt-Anchor" href="#开启https"></a> 开启HTTPS</h3>
+<p>使用GitHub Pages时一直没弄明白要怎么给自定义域名开启HTTPS，而GitLab Pages在设置中添加自定义域名时，如果选择开启HTTPS，会要求同时添加证书信息，简单明白。根据要求，将自己证书的<code>.pem</code>和<code>.key</code>文件的内容粘贴到对应位置，保存即可，很快就会生效。提供证书后，注意勾选强制使用HTPPS，这样使用HTTP访问时可以自动转跳HTTPS。</p>
+<p>证书可以申请免费的，我在阿里万网注册的域名，在<code>安全</code> &gt; <code>CA证书</code>中即可申请免费的赛门铁克证书，有效期一年，到期了重新申请即可。此外GitLab还计划实现对Let’s Encrypt的支持，到时候开启HTTPS将更加简单<a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/28996" target="_blank" rel="noopener"><sup>2</sup></a>，目前使用Let’s Encrypt还需要自行申请并每3个月都手动更新，挺麻烦的，官方文档对此有详细介绍<a href="https://about.gitlab.com/2016/04/11/tutorial-securing-your-gitlab-pages-with-tls-and-letsencrypt/" target="_blank" rel="noopener"><sup>3</sup></a>。最后还有SSL For Free等方便Let’s Encrypt使用的网站。</p>
+<p>现在还有一个问题，申请的赛门铁克免费证书不是泛域名证书/通配符证书(Wildcard Certificates)，只有<code>yelf.me</code>和<code>www.yelf.me</code>两个域名能够使用，不支持次级域名如<code>weibo.yelf.me</code>使用。</p>
+<div class="note info">
+            <p><strong>注：</strong> 2018年5月1日 GitHub正式上线了对Let’s Encrypt的支持，自定义域名无需设置即可开启HTTPS<a href="https://blog.github.com/2018-05-01-github-pages-custom-domains-https/" target="_blank" rel="noopener"><sup>4</sup></a>。</p>
+          </div>
+<h3 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接"></a> 参考链接</h3>
+<p>GitLab Pages官方文档：<a href="https://docs.gitlab.com/ee/user/project/pages/" target="_blank" rel="noopener">https://docs.gitlab.com/ee/user/project/pages/</a><br>
+在gitlab上搭建hexo博客：<a href="https://huangjj27.gitlab.io/posts/hexo-on-gitlab/" target="_blank" rel="noopener">https://huangjj27.gitlab.io/posts/hexo-on-gitlab/</a></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        <div id="reward-container">
+  <div>Donate if you enjoy this content.</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.jpg" alt="yelf WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/alipay.jpg" alt="yelf Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>yelf</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://yelf.me/notes/website/gitlab-pages/" title="从零开始建立个人博客IX：由GitHub迁移到GitLab">https://yelf.me/notes/website/gitlab-pages/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/website/" rel="tag"># website</a>
+            
+              <a href="/tags/gitlab/" rel="tag"># gitlab</a>
+            
+              <a href="/tags/github/" rel="tag"># github</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/notes/website/website-seo/" rel="next" title="从零开始建立个人博客VIII：网站SEO">
+                  <i class="fa fa-chevron-left"></i> 从零开始建立个人博客VIII：网站SEO
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/notes/website/website-weibo/" rel="prev" title="从零开始建立个人博客X：微博备份计划">
+                  从零开始建立个人博客X：微博备份计划 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+      <div class="comment-button-group">
+        
+          <a class="btn comment-button disqus">disqus</a>
+        
+          <a class="btn comment-button valine">valine</a>
+        
+      </div>
+      
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+        </div>
+      
+        <div class="comment-position valine">
+          <div class="comments" id="comments"></div>
+        </div>
+      
+      <script pjax>
+        (function() {
+          let commentButton = document.querySelectorAll('.comment-button');
+            commentButton.forEach(item => {
+            let commentClass = item.classList[2];
+            item.addEventListener('click', () => {
+              commentButton.forEach(rmActive => rmActive.classList.remove('active'));
+              item.classList.add('active');
+              document.querySelectorAll('.comment-position').forEach(rmActive => rmActive.classList.remove('active'));
+              document.querySelector(`.comment-position.${commentClass}`).classList.add('active');
+              
+                localStorage.setItem('comments_active', commentClass);
+              
+            });
+          });
+          let activeClass = 'valine';
+          
+            activeClass = localStorage.getItem('comments_active') || activeClass;
+          
+          if (activeClass) {
+            let activeButton = document.querySelector(`.comment-button.${activeClass}`);
+            if (activeButton) {
+              activeButton.click();
+            }
+          }
+        })();
+      </script>
+    
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#gitlab-pages简介"><span class="nav-number">1.</span> <span class="nav-text"> GitLab Pages简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建pages"><span class="nav-number">2.</span> <span class="nav-text"> 创建Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题及解决"><span class="nav-number">3.</span> <span class="nav-text"> 问题及解决</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github迁移"><span class="nav-number">4.</span> <span class="nav-text"> GitHub迁移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义域名"><span class="nav-number">5.</span> <span class="nav-text"> 自定义域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启https"><span class="nav-number">6.</span> <span class="nav-text"> 开启HTTPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考链接"><span class="nav-number">7.</span> <span class="nav-text"> 参考链接</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="yelf">
+  <p class="site-author-name" itemprop="name">yelf</p>
+  <div class="site-description" itemprop="description">读万卷书，行万里路</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">77</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/iyelf/photos" title="Weibo &rarr; https://weibo.com/iyelf/photos" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://instagram.com/yelf.me/" title="Instagram &rarr; https://instagram.com/yelf.me/" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-thumbs-o-up"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/c/PBSSpaceTime" title="https://www.youtube.com/c/PBSSpaceTime" rel="noopener" target="_blank">PBS Space Time</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/c/3Blue1Brown" title="https://www.youtube.com/c/3Blue1Brown" rel="noopener" target="_blank">3B1B</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://brilliant.org" title="https://brilliant.org" rel="noopener" target="_blank">Brilliant</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://multiverse.lamost.org/" title="https://multiverse.lamost.org/" rel="noopener" target="_blank">章鱼喵</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://openmetric.org/multiverse/" title="http://openmetric.org/multiverse/" rel="noopener" target="_blank">时见疏星</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.physixfan.com/" title="https://www.physixfan.com/" rel="noopener" target="_blank">宇宙的心弦</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.changhai.org/" title="https://www.changhai.org/" rel="noopener" target="_blank">卢昌海</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.loyhome.com/" title="https://www.loyhome.com/" rel="noopener" target="_blank">落园</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://thzt.github.io/" title="https://thzt.github.io/" rel="noopener" target="_blank">何幻</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://kexue.fm" title="https://kexue.fm" rel="noopener" target="_blank">科学空间</a>
+        </li>
+      
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2012 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yelf</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a></div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a></div>
+
+        
+
+
+
+
+
+
+  
+  <script pjax>
+  function leancloudSelector(url) {
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = visitors.getAttribute('id').trim();
+      var title = visitors.getAttribute('data-flag-title').trim();
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+            
+              .catch(error => {
+                console.log('Failed to save visitor count', error);
+              })
+          } else {
+              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.log('Failed to create', error);
+                });
+            
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return element.getAttribute('id').trim();
+      });
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length === 0) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
+            return;
+          }
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            leancloudSelector(url).innerText = time;
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
+            }
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=MtqqV75gTXa8hAGiCtDROthF-MdYXbMMI')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': 'MtqqV75gTXa8hAGiCtDROthF-MdYXbMMI',
+            'X-LC-Key': 'BUbsW8Qk53qKmCs7iWMDlCMn',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+        if (localhost.test(document.URL)) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var id = element.id || '';
+    var src = element.src || '';
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (id !=='') {
+      script.id = element.id;
+    }
+    if (src !== '') {
+      script.src = src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+  <script pjax>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+
+  
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://blog-yelf.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://yelf.me/notes/website/gitlab-pages/";
+    this.page.identifier = "notes/website/gitlab-pages/";
+    this.page.title = '从零开始建立个人博客IX：由GitHub迁移到GitLab';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://blog-yelf.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    (function() {
+      var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
+      if (offsetTop <= 0) {
+        // load directly when there's no a scrollbar
+        window.addEventListener('load', loadComments, false);
+      } else {
+        var disqus_scroll = () => {
+          // offsetTop may changes because of manually resizing browser window or lazy loading images.
+          var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
+          var scrollTop = window.scrollY;
+
+          // pre-load comments a bit? (margin or anything else)
+          if (offsetTop - scrollTop < 60) {
+            window.removeEventListener('scroll', disqus_scroll);
+            loadComments();
+          }
+        };
+        window.addEventListener('scroll', disqus_scroll);
+      }
+    })();
+  
+</script>
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: true,
+    notify: true,
+    appId: 'MtqqV75gTXa8hAGiCtDROthF-MdYXbMMI',
+    appKey: 'BUbsW8Qk53qKmCs7iWMDlCMn',
+    placeholder: 'Leave a comment, receive notifications with your email...',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname
+  });
+}, window.Valine);
+</script>
+
+    </div>
+</body>
+</html>

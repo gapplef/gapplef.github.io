@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg?v=7.4.0" color="#222">
+  <link rel="manifest" href="/images/favicon/manifest.json">
+  <meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+  <meta name="google-site-verification" content="jpc-0wXaxN6lM5RYg0sX_ULaFnMnNWjL-EHPb9ihARg">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Ubuntu:300,300italic,400,400italic,700,700italic|Ubuntu Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"width":245},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: true,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="The eternal mystery of the world is its comprehensibility.  – Albert Einstein">
+<meta name="keywords" content="physics">
+<meta property="og:type" content="article">
+<meta property="og:title" content="当代物理学素养">
+<meta property="og:url" content="https://yelf.me/notes/physics/modern-physics-literacy/index.html">
+<meta property="og:site_name" content="C&#39;Joy">
+<meta property="og:description" content="The eternal mystery of the world is its comprehensibility.  – Albert Einstein">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-03-24T08:57:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="当代物理学素养">
+<meta name="twitter:description" content="The eternal mystery of the world is its comprehensibility.  – Albert Einstein">
+  <link rel="alternate" href="/atom.xml" title="C'Joy" type="application/atom+xml">
+  <link rel="canonical" href="https://yelf.me/notes/physics/modern-physics-literacy/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>当代物理学素养 | C'Joy</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64070885-1"></script>
+  <script pjax>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-64070885-1');
+    }
+  </script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">C'Joy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">GET (SH)IT DONE</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-microblog">
+      
+    
+
+    <a href="https:\/\/weibo.yelf.me" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-mail-forward"></i> <br>Microblog</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://yelf.me/notes/physics/modern-physics-literacy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yelf">
+      <meta itemprop="description" content="读万卷书，行万里路">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="C'Joy">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">当代物理学素养
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-01-01 20:00:00" itemprop="dateCreated datePublished" datetime="2019-01-01T20:00:00+08:00">2019-01-01</time>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/Physics/" itemprop="url" rel="index"><span itemprop="name">Physics</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span id="/notes/physics/modern-physics-literacy/" class="post-meta-item leancloud_visitors" data-flag-title="当代物理学素养" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/notes/physics/modern-physics-literacy/#comments" itemprop="discussionUrl"><span class="post-comments-count disqus-comment-count" data-disqus-identifier="notes/physics/modern-physics-literacy/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/notes/physics/modern-physics-literacy/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/notes/physics/modern-physics-literacy/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <!--近现代物理一直在沿着还原论的道路前进，分子、原子、质子、夸克、量子场....
+当走到尽头，人们发现不得不回到整体论，自组织、纠缠、涌现、复杂性系统....-->
+<blockquote>
+<p>The eternal mystery of the world is its comprehensibility.  – Albert Einstein</p>
+</blockquote>
+<a id="more"></a>
+<style type="text/css">
+h3{text-align: center;} 
+</style>
+<p>世界为什么有规律可寻，而非混沌无规？一个混沌的宇宙大概无法诞生生命，乃至演化出试图理解其自身的智慧生命，也就无法提出这样的问题，即所谓的“人择原理”。可为什么人类可以理解这些规律？组成个体的细胞也可以理解其所存在与构成的个人本身吗？作为宇宙而言，又为什么要演化出试图理解其自身的智慧生命？宇宙存在的意义是什么？人类或许可以通过创造生命与智慧，乃至新的地球，来理解我们自己的存在，但我们要如何理解宇宙的存在？</p>
+<h3 id="books"><a class="markdownIt-Anchor" href="#books"></a> Books</h3>
+<ul>
+<li><a href="https://book.douban.com/subject/21794048/" target="_blank" rel="noopener"><strong>21世纪新物理学</strong></a></li>
+<li><a href="http://ioppublishing.org/publications/our-books/" target="_blank" rel="noopener"><strong>IOP ebooks</strong></a>: Expanding Physics, Concise Physics</li>
+<li><a href="https://www.nap.edu/topic/" target="_blank" rel="noopener"><strong>National Academies Press</strong></a>: Consensus Study Report, Proceedings<!--http://sites.nationalacademies.org/SSB/SSB_051650-->
+<ul>
+<li><a href="https://www.nap.edu/topic/411/math-chemistry-and-physics/physics" target="_blank" rel="noopener">Physics</a></li>
+<li><a href="https://www.nap.edu/topic/410/math-chemistry-and-physics/math-and-statistics" target="_blank" rel="noopener">Math and Statistics</a></li>
+<li><a href="https://www.nap.edu/topic/417/space-and-aeronautics/astronomy-and-astrophysics" target="_blank" rel="noopener">Astronomy and Astrophysics</a></li>
+<li><a href="https://www.nap.edu/topic/419/space-and-aeronautics/space-exploration-and-development" target="_blank" rel="noopener">Space Exploration and Development</a></li>
+</ul>
+</li>
+<li><a href="https://pan.baidu.com/s/1AqJzV5t6BSwH_pFJc51LzQ#list/path=%2F" target="_blank" rel="noopener"><strong>第一推动系列</strong></a>：
+<ul>
+<li><a href="https://book.douban.com/series/41680" target="_blank" rel="noopener"><strong>综合</strong></a>：复杂、复杂的引擎、皇帝新脑、实在终极之问、伽利略的手指、未来50年、真理与美、四维旅行、下一步是什么</li>
+<li><a href="https://book.douban.com/series/40933" target="_blank" rel="noopener"><strong>物理</strong></a>：上帝与新物理学、时间之箭、宇宙的琴弦、宇宙的结构、存在之轻、量子之谜、时间 空间和万物、不同的宇宙</li>
+<li><a href="https://book.douban.com/series/40934" target="_blank" rel="noopener"><strong>宇宙</strong></a>：黑洞与时间弯曲、黑洞战争、大宇之形、宇宙的轮回、时空的未来、物理天文学前沿、果壳里的60年、时空本性</li>
+<li><a href="https://book.douban.com/series/42085" target="_blank" rel="noopener"><strong>生命</strong></a>：脑中魅影、生命是什么、惊人的假说、比天空更宽广</li>
+<li><a href="https://book.douban.com/series/1700" target="_blank" rel="noopener"><strong>旧版</strong></a>：宇宙为家、科学新领域的探索、夸克与美洲豹、数学：确定性的丧失、细胞生命的礼赞、可畏的对称、从反粒子到最终定律、看不见的世界</li>
+</ul>
+</li>
+<li><a href="https://book.douban.com/series/3658" target="_blank" rel="noopener"><strong>世纪人文系列丛书·开放人文</strong></a>：宇宙的本源、涌现、从混沌到有序、混沌与秩序、复杂性与后现代主义、进化的大脑、脑海探险、解码宇宙</li>
+<li><strong>复杂性科学</strong>：<a href="https://book.douban.com/subject/30171338/" target="_blank" rel="noopener">复杂</a>、复杂的引擎、宇宙为家、科学新领域的探索、涌现、从混沌到有序、混沌与秩序、复杂性与后现代主义；<a href="https://book.douban.com/subject/1030898/" target="_blank" rel="noopener">复杂</a>、失控、复杂性思维、人工科学、计算机与复杂性科学的兴起、探索复杂性、信息与自组织</li>
+<li><a href="https://book.douban.com/author/4608692/" target="_blank" rel="noopener"><strong>约翰·惠勒</strong></a>：自传、宇宙逍遥、物理学和质朴性、实在终极之问/宇宙极问<br>
+约翰·惠勒(John Wheeler, 1991-2008)是著名理论物理学家，量子理论及广义相对论大师，哥本哈根学派代表人物之一。惠勒一生创造了众多广为认知的术语，如黑洞、虫洞、量子泡沫，还提出了“<a href="https://www.zhihu.com/question/21889804" target="_blank" rel="noopener">单电子宇宙</a>”、“万物源于比特(It from Bit)”等大胆猜想。</li>
+<li>隐藏的现实、Why Does the World Exist?、What is Real?、When Einstein Walked with Godel、Beyond Weird…</li>
+</ul>
+<!--+ **戴维·伯姆(David Bohm)**：论对话、The Ending of Time、The Limits of Thought、Wholeness and the Implicate Order、On Dialogue、On Creativity、Science, Order and Creativity、Thought as a System-->
+<h3 id="lectures"><a class="markdownIt-Anchor" href="#lectures"></a> Lectures</h3>
+<ul>
+<li>
+<p><a href="https://www.youtube.com/c/PBSSpaceTime" target="_blank" rel="noopener">PBS SpaceTime</a></p>
+</li>
+<li>
+<p>ER=EPR, Entanglement (Leonard Susskind) <a href="https://www.bilibili.com/video/av17172574/" target="_blank" rel="noopener">2014</a>、<a href="https://www.bilibili.com/video/av4971065" target="_blank" rel="noopener">2015</a>、<a href="https://www.bilibili.com/video/av40141940" target="_blank" rel="noopener">2016</a><br>
+<a href="https://www.zhihu.com/question/26719410" target="_blank" rel="noopener">https://www.zhihu.com/question/26719410</a></p>
+</li>
+<li>
+<p>SystemsTheory<br>
+<a href="https://campus.swarma.org/gpac=10665" target="_blank" rel="noopener">系统科学概论</a><br>
+系统科学导引：<a href="https://campus.swarma.org/gpac=137" target="_blank" rel="noopener">概论</a>、<a href="https://campus.swarma.org/gpac=138" target="_blank" rel="noopener">数学</a>、<a href="https://campus.swarma.org/gpac=139" target="_blank" rel="noopener">物理</a>、<a href="https://campus.swarma.org/gpac=140" target="_blank" rel="noopener">量子</a></p>
+</li>
+<li>
+<p>Complexity<br>
+<a href="https://www.bilibili.com/video/av21636465" target="_blank" rel="noopener">Complexity, 2017</a>、<a href="https://www.bilibili.com/video/av22676567" target="_blank" rel="noopener">Emergence, 2016</a>、<a href="https://www.bilibili.com/video/av21759625" target="_blank" rel="noopener">Systems Thinking, 2015</a>、<a href="https://www.bilibili.com/video/av22674784" target="_blank" rel="noopener">Nonlinear Systems, 2015</a><br>
+<a href="https://www.bilibili.com/video/av24631496" target="_blank" rel="noopener">Complexity: An introduction @ Santa Fe Institute</a><br>
+Complexity @ CMU <a href="https://www.bilibili.com/video/av26820330" target="_blank" rel="noopener">Undergrad</a>、<a href="https://www.bilibili.com/video/av24171708" target="_blank" rel="noopener">Graduate</a><br>
+IFQ(It From Qubit) Complexity Workshop @ SITP  <a href="https://www.youtube.com/watch?v=pVy4k0nZHHA&amp;list=PLS3_1JNX8dEg_7rTfEzQKVwU_r1-LyULl" target="_blank" rel="noopener">2017</a><br>
+Black Holes and Complexity  <a href="https://www.youtube.com/watch?v=ZJcrJE23Sls&amp;list=PLS3_1JNX8dEhfOjutx7t8qD9gQRsoJY7G" target="_blank" rel="noopener">2018</a><br>
+Complexity and Gravity  2018    <a href="https://www.bilibili.com/video/av30795711" target="_blank" rel="noopener">1</a>, <a href="https://www.bilibili.com/video/av30797394" target="_blank" rel="noopener">2</a>, <a href="https://www.bilibili.com/video/av30799487" target="_blank" rel="noopener">3</a>  <a href="https://arxiv.org/abs/1810.11563" target="_blank" rel="noopener">Lectures</a></p>
+</li>
+</ul>
+<!--复杂性思维 @ 北师大  [2018](https://space.bilibili.com/238664541/channel/detail?cid=42533)
+复杂性科学 - 张江：[混沌与涌现](https://www.jianshu.com/p/972bc05b7155)、[开放与进化](https://www.jianshu.com/p/e52da4b679ea)、网络科学 [上](https://www.jianshu.com/p/a27f42212372) [下](https://www.jianshu.com/p/156443d1c943)、成功法则 [上](https://www.jianshu.com/p/83b9bc36d48f) [下](https://www.jianshu.com/p/a2748a6845d7)-->
+<ul>
+<li>
+<p>Messenger Lectures Leonard Susskind <a href="https://www.bilibili.com/video/av37121157" target="_blank" rel="noopener">2013</a><br>
+时间之矢(Entropy)、全息原理(Information)、量子纠缠(Entanglement)<br>
+*<a href="http://theuniversityfaculty.cornell.edu/dean/messengeruniversity-lectures/" target="_blank" rel="noopener">梅森哲讲座</a>是康奈尔大学邀请知名学术或公众人物所做的系列讲座，由Hiram Messenger于1924创立。最初形式为讲授者一年讲12节系列课程，现在则演变为在一学期内讲授3或6节系列课程。最出名的是费曼在1964所讲的7节课程：物理定律的本性(<a href="http://www.cornell.edu/video/playlist/richard-feynman-messenger-lectures" target="_blank" rel="noopener">The Character of Physical Law</a>)，讲座内容后来<a href="https://book.douban.com/subject/19989299/" target="_blank" rel="noopener">成书出版</a>。</p>
+</li>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/53069070" target="_blank" rel="noopener">BiliBili 公开课目录</a></p>
+</li>
+</ul>
+<h3 id="questions"><a class="markdownIt-Anchor" href="#questions"></a> Questions</h3>
+<ul>
+<li>
+<p>John Wheeler’s <a href="http://www.metanexus.net/archive/ultimate_reality/info.htm" target="_blank" rel="noopener">Really Big Questions</a>:<br>
+Why the quantum?<br>
+How come existence?<br>
+It from bit?<br>
+A “participatory universe”?<br>
+What makes “meaning”?</p>
+</li>
+<li>
+<p><a href="https://oqp.iqoqi.univie.ac.at/open-quantum-problems" target="_blank" rel="noopener">Open Quantum Problems</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_physics" target="_blank" rel="noopener">Unsolved problems in physics</a></p>
+</li>
+<li>
+<p><a href="http://www.openproblems.net/" target="_blank" rel="noopener">Open Problems In Mathematics And Physics</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Millennium_Prize_Problems" target="_blank" rel="noopener">Millennium Prize Problems - Math</a></p>
+</li>
+<li>
+<p><a href="http://www.theory.caltech.edu/~preskill/millennium.html" target="_blank" rel="noopener">Physics Problems for the Next Millennium</a><br>
+Why does the universe appear to have one time and three space dimensions?</p>
+</li>
+<li>
+<p>National Academies Report: Astro in The New Millennium, New Horizons in Astro</p>
+</li>
+</ul>
+<h3 id="collaborations"><a class="markdownIt-Anchor" href="#collaborations"></a> Collaborations</h3>
+<ul>
+<li><a href="https://www.simonsfoundation.org/mathematics-physical-sciences/it-from-qubit/" target="_blank" rel="noopener"><strong>It from Qubit(IfQ)</strong></a><br>
+万物源于量子比特(It From Qubit)是由西蒙斯基金于2015年起所组织的集合量子物理、引力理论与量子信息等领域科学家的跨学科合作项目。项目名称源自著名理论物理学家约翰·惠勒所提出的“万物源于比特(It from Bit)”的猜想，认为信息才是物质世界的基础，粒子或场由于观测者的参与才实现其存在(“参与性宇宙”)。</li>
+</ul>
+<ol>
+<li>Does spacetime emerge from entanglement?</li>
+<li>Do black holes have interiors? Does the universe exist outside our horizon?</li>
+<li>What is the information-theoretic structure of quantum field theories?</li>
+<li>Can quantum computers simulate all physical phenomena?</li>
+<li>How does quantum information flow in time?</li>
+</ol>
+<blockquote>
+<p>It from bit. Otherwise put, every it — every particle, every field of force, even the space-time continuum itself — derives its function, its meaning, its very existence entirely — even if in some contexts indirectly — from the apparatus-elicited answers to yes-or-no questions, binary choices, bits. It from bit symbolizes the idea that every item of the physical world has at bottom — a very deep bottom, in most instances — an immaterial source and explanation; that which we call reality arises in the last analysis from the posing of yes-no questions and the registering of equipment-evoked responses; in short, that all things physical are information-theoretic in origin and that this is a participatory universe.<br>
+Information, Physics, Quantum: The Search for Links – John Wheeler(1989)</p>
+</blockquote>
+<blockquote>
+<p>We are participators in bringing into being not only the near and here but the far away and long ago. We are in this sense, participators in bringing about something of the universe in the distant past and if we have one explanation for what’s happening in the distant past why should we need more?</p>
+</blockquote>
+<ul>
+<li><a href="https://www.templeton.org/grant/the-black-hole-initiative-towards-a-center-for-interdisciplinary-research" target="_blank" rel="noopener"><strong>Black Hole Initiative(BHI)</strong></a><br>
+黑洞倡议(Black Hole Initiative)是由邓普顿基金会于2016年在哈佛大学组织的综合的跨学科黑洞研究项目，集合了天文、数学、物理、哲学各学科的领军人物，如视界面望远镜(EHT)项目负责人Sheperd Doeleman、知名数学家丘成桐等。</li>
+</ul>
+<blockquote>
+<p>If determinism — the predictability of the universe — breaks down in black holes, it could break down in other situations. Even worse, if determinism breaks down, we can’t be sure of our past history either. The history books and our memories could just be illusions. It is the past that tells us who we are. Without it, we lose our identity.<br>
+— Stephen Hawking, BHI Inauguration(2016)</p>
+</blockquote>
+<h3 id="theoretical-minimum"><a class="markdownIt-Anchor" href="#theoretical-minimum"></a> Theoretical Minimum</h3>
+<p>理论底限(<a href="https://theoreticalminimum.com/about" target="_blank" rel="noopener">The Theoretical Minimum</a>)系列是由弦论创始人之一、著名理论物理学家莱昂纳德·萨斯坎德(Leonard Susskind)在斯坦福大学所讲授的继续教育课程。主要针对了解基本代数及分析知识，对理论物理感兴趣却又没有机会学习的人，讲述理解现代物理所需的最低限度的物理及数学知识，用于填补深度不足的科普与艰深晦涩的教材之间的空白。系列共包括6门<a href="https://theoreticalminimum.com/courses" target="_blank" rel="noopener">核心课程</a>及一系列<a href="https://theoreticalminimum.com/courses/supplemental" target="_blank" rel="noopener">补充课程</a>，内容涵盖经典分析力学、量子力学、狭义相对论、广义相对论、宇宙学、统计物理、粒子物理、弦论、量子纠缠，此外还配套发行有相关书籍。</p>
+<ul>
+<li>
+<p><strong>Core Courses</strong><br>
+Classical Mechanics 2007, <a href="https://www.bilibili.com/video/av37992497" target="_blank" rel="noopener">2011</a><br>
+Quantum Mechanics   2008, <a href="http://open.163.com/special/opencourse/mechanics.html" target="_blank" rel="noopener">2012</a><br>
+Special Relativity  2008, <a href="https://www.bilibili.com/video/av39159660" target="_blank" rel="noopener">2012</a><br>
+General Relativity  2008，<a href="https://www.bilibili.com/video/av36417533" target="_blank" rel="noopener">2012</a><br>
+Cosmology           2009, <a href="https://www.bilibili.com/video/av39804112" target="_blank" rel="noopener">2013</a><br>
+Statistical Mechanics   2009, <a href="https://www.bilibili.com/video/av39878940" target="_blank" rel="noopener">2013</a></p>
+</li>
+<li>
+<p><strong>Supplemental Courses</strong><br>
+Quantum Entanglement    <a href="https://www.bilibili.com/video/av39879998" target="_blank" rel="noopener">2006</a><br>
+Relativity              2007<br>
+Particle Physics    2009~2010   <a href="https://www.bilibili.com/video/av39806334" target="_blank" rel="noopener">I: Basic Concepts</a>, <a href="https://www.bilibili.com/video/av39810091" target="_blank" rel="noopener">II: Standard Model</a>，<a href="https://www.bilibili.com/video/av39811769" target="_blank" rel="noopener">III: Supersymmetry and Grand Unification</a><br>
+String Theory   <a href="https://www.bilibili.com/video/av38894783" target="_blank" rel="noopener">2010</a><br>
+Cosmology and Black Holes   <a href="https://www.bilibili.com/video/av40147682" target="_blank" rel="noopener">2011</a><br>
+Higgs Boson     2012<br>
+Advanced Quantum Mechanics  <a href="https://www.bilibili.com/video/av39800934" target="_blank" rel="noopener">2013</a></p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+      
+        <div id="reward-container">
+  <div>Donate if you enjoy this content.</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.jpg" alt="yelf WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/alipay.jpg" alt="yelf Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>yelf</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://yelf.me/notes/physics/modern-physics-literacy/" title="当代物理学素养">https://yelf.me/notes/physics/modern-physics-literacy/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/physics/" rel="tag"># physics</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/enjoy/watching/SAC-and-meme/" rel="next" title="SAC与meme">
+                  <i class="fa fa-chevron-left"></i> SAC与meme
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/popsci/stars-and-sand/" rel="prev" title="星星与沙子">
+                  星星与沙子 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+      <div class="comment-button-group">
+        
+          <a class="btn comment-button disqus">disqus</a>
+        
+          <a class="btn comment-button valine">valine</a>
+        
+      </div>
+      
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+        </div>
+      
+        <div class="comment-position valine">
+          <div class="comments" id="comments"></div>
+        </div>
+      
+      <script pjax>
+        (function() {
+          let commentButton = document.querySelectorAll('.comment-button');
+            commentButton.forEach(item => {
+            let commentClass = item.classList[2];
+            item.addEventListener('click', () => {
+              commentButton.forEach(rmActive => rmActive.classList.remove('active'));
+              item.classList.add('active');
+              document.querySelectorAll('.comment-position').forEach(rmActive => rmActive.classList.remove('active'));
+              document.querySelector(`.comment-position.${commentClass}`).classList.add('active');
+              
+                localStorage.setItem('comments_active', commentClass);
+              
+            });
+          });
+          let activeClass = 'valine';
+          
+            activeClass = localStorage.getItem('comments_active') || activeClass;
+          
+          if (activeClass) {
+            let activeButton = document.querySelector(`.comment-button.${activeClass}`);
+            if (activeButton) {
+              activeButton.click();
+            }
+          }
+        })();
+      </script>
+    
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#books"><span class="nav-number">1.</span> <span class="nav-text"> Books</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lectures"><span class="nav-number">2.</span> <span class="nav-text"> Lectures</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#questions"><span class="nav-number">3.</span> <span class="nav-text"> Questions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#collaborations"><span class="nav-number">4.</span> <span class="nav-text"> Collaborations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#theoretical-minimum"><span class="nav-number">5.</span> <span class="nav-text"> Theoretical Minimum</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="yelf">
+  <p class="site-author-name" itemprop="name">yelf</p>
+  <div class="site-description" itemprop="description">读万卷书，行万里路</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">77</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/iyelf/photos" title="Weibo &rarr; https://weibo.com/iyelf/photos" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://instagram.com/yelf.me/" title="Instagram &rarr; https://instagram.com/yelf.me/" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-thumbs-o-up"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/c/PBSSpaceTime" title="https://www.youtube.com/c/PBSSpaceTime" rel="noopener" target="_blank">PBS Space Time</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/c/3Blue1Brown" title="https://www.youtube.com/c/3Blue1Brown" rel="noopener" target="_blank">3B1B</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://brilliant.org" title="https://brilliant.org" rel="noopener" target="_blank">Brilliant</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://multiverse.lamost.org/" title="https://multiverse.lamost.org/" rel="noopener" target="_blank">章鱼喵</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://openmetric.org/multiverse/" title="http://openmetric.org/multiverse/" rel="noopener" target="_blank">时见疏星</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.physixfan.com/" title="https://www.physixfan.com/" rel="noopener" target="_blank">宇宙的心弦</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.changhai.org/" title="https://www.changhai.org/" rel="noopener" target="_blank">卢昌海</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.loyhome.com/" title="https://www.loyhome.com/" rel="noopener" target="_blank">落园</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://thzt.github.io/" title="https://thzt.github.io/" rel="noopener" target="_blank">何幻</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://kexue.fm" title="https://kexue.fm" rel="noopener" target="_blank">科学空间</a>
+        </li>
+      
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2012 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yelf</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a></div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a></div>
+
+        
+
+
+
+
+
+
+  
+  <script pjax>
+  function leancloudSelector(url) {
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = visitors.getAttribute('id').trim();
+      var title = visitors.getAttribute('data-flag-title').trim();
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+            
+              .catch(error => {
+                console.log('Failed to save visitor count', error);
+              })
+          } else {
+              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.log('Failed to create', error);
+                });
+            
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return element.getAttribute('id').trim();
+      });
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length === 0) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
+            return;
+          }
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            leancloudSelector(url).innerText = time;
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
+            }
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=MtqqV75gTXa8hAGiCtDROthF-MdYXbMMI')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': 'MtqqV75gTXa8hAGiCtDROthF-MdYXbMMI',
+            'X-LC-Key': 'BUbsW8Qk53qKmCs7iWMDlCMn',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+        if (localhost.test(document.URL)) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var id = element.id || '';
+    var src = element.src || '';
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (id !=='') {
+      script.id = element.id;
+    }
+    if (src !== '') {
+      script.src = src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+  <script pjax>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+
+  
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://blog-yelf.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://yelf.me/notes/physics/modern-physics-literacy/";
+    this.page.identifier = "notes/physics/modern-physics-literacy/";
+    this.page.title = '当代物理学素养';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://blog-yelf.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    (function() {
+      var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
+      if (offsetTop <= 0) {
+        // load directly when there's no a scrollbar
+        window.addEventListener('load', loadComments, false);
+      } else {
+        var disqus_scroll = () => {
+          // offsetTop may changes because of manually resizing browser window or lazy loading images.
+          var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
+          var scrollTop = window.scrollY;
+
+          // pre-load comments a bit? (margin or anything else)
+          if (offsetTop - scrollTop < 60) {
+            window.removeEventListener('scroll', disqus_scroll);
+            loadComments();
+          }
+        };
+        window.addEventListener('scroll', disqus_scroll);
+      }
+    })();
+  
+</script>
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: true,
+    notify: true,
+    appId: 'MtqqV75gTXa8hAGiCtDROthF-MdYXbMMI',
+    appKey: 'BUbsW8Qk53qKmCs7iWMDlCMn',
+    placeholder: 'Leave a comment, receive notifications with your email...',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname
+  });
+}, window.Valine);
+</script>
+
+    </div>
+</body>
+</html>
