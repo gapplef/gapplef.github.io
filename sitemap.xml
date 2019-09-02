@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yelf.me/notes/website/website-test/</loc>
+    
+    <lastmod>2019-09-02T05:42:46.942Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yelf.me/notes/website/website-typography/</loc>
+    
+    <lastmod>2019-09-02T05:29:36.328Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yelf.me/notes/website/markdown-figure/</loc>
+    
+    <lastmod>2019-09-02T05:19:12.980Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yelf.me/popsci/stars-and-sand/</loc>
+    
+    <lastmod>2019-09-02T01:24:16.853Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yelf.me/enjoy/hobby/skateboard-tricks-for-beginner/</loc>
     
     <lastmod>2019-09-01T15:48:32.863Z</lastmod>
@@ -19,13 +47,6 @@
     <loc>https://yelf.me/notes/website/website-multimedia/</loc>
     
     <lastmod>2019-09-01T15:37:56.892Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yelf.me/notes/website/website-test/</loc>
-    
-    <lastmod>2019-09-01T15:33:47.120Z</lastmod>
     
   </url>
   
@@ -89,13 +110,6 @@
     <loc>https://yelf.me/enjoy/watching/Ready_Player_One/</loc>
     
     <lastmod>2019-08-20T08:56:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yelf.me/notes/website/website-typography/</loc>
-    
-    <lastmod>2019-08-19T13:28:56.000Z</lastmod>
     
   </url>
   
@@ -352,13 +366,6 @@
   </url>
   
   <url>
-    <loc>https://yelf.me/popsci/stars-and-sand/</loc>
-    
-    <lastmod>2019-02-26T05:40:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://yelf.me/notes/website/markdown-it/</loc>
     
     <lastmod>2019-02-26T04:39:01.000Z</lastmod>
@@ -488,13 +495,6 @@
     <loc>https://yelf.me/notes/website/gitlab-pages/</loc>
     
     <lastmod>2018-08-29T02:28:03.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yelf.me/notes/website/markdown-figure/</loc>
-    
-    <lastmod>2018-08-10T10:37:05.000Z</lastmod>
     
   </url>
   

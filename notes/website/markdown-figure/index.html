@@ -66,7 +66,7 @@
 <meta property="og:site_name" content="C&#39;Joy">
 <meta property="og:description" content="Markdown默认并不支持排版，排版需要借助HTML/CSS来实现">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-10T10:37:05.000Z">
+<meta property="og:updated_time" content="2019-09-02T05:19:12.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Markdown中如何设置图片居中">
 <meta name="twitter:description" content="Markdown默认并不支持排版，排版需要借助HTML/CSS来实现">
@@ -390,25 +390,25 @@
 <p>遇到这个问题时，网上搜索发现很多人都有相同需求，但看到的答案却大多不怎么满意，因此这里整理一下。<br>
 说是Markdown中图片居中，但此处针对的是Markdown转化的网页图片居中，更具体的是针对Hexo写博客情况。<br>
 Markdown默认并不支持排版，排版需要借助HTML/CSS来实现，如果你不懂HTML/CSS，也不想去了解，那么最直接的方法是换一个Hexo主题，很多主题中图片默认都是居中的。<br>
-这里总结了常见的图片居中办法，如果想要更详细的了解代码的具体意义，可以查看<a href="../website-typography">从零开始建立个人博客V：网页排版</a>以及文末的参考链接。</p>
+这里总结了常见的图片居中办法，如果想要更详细的了解代码的具体意义，可以查看<a href="../website-typography">网页排版</a>以及文末的参考链接。</p>
 <p><strong><code>&lt;center&gt;</code>标签</strong><br>
 实现图片居中，最简单的方法是使用HTML的center标签<code>&lt;center&gt;...&lt;/center&gt;</code>，网上可以看到不少这个答案。但注意该标签在HTML5中已移除，因此不建议使用。</p>
 <p><strong>inline样式</strong><br>
 网上常见的第二种做法是使用内联样式：<br>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"text-align: center;"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">![Picture](/path/to/image)</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>在VSCode中预览时确实有效，需要注意的是插入图片行与<code>&lt;div&gt;</code>起始标签间要有空行，否则图片无法正常显示。不过在使用Hexo的tranquilpeak主题时，上述做法居然无效，如果换用<code>&lt;figure&gt;</code>标签，有效果但也不是居中，很奇怪。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"text-align: center;"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">![Picture](/path/to/image)</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"text-align: center;"</span>&gt;</span></span><br><span class="line">![Picture](/path/to/image)</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>在VSCode中预览时确实有效，需要注意的是插入图片行与<code>&lt;div&gt;</code>起始标签间要有空行，否则图片无法正常显示。不过在使用Hexo的tranquilpeak主题时，上述做法居然无效，如果换用<code>&lt;figure&gt;</code>标签，有效果但也不是居中。出现这种情况是由于Markdown与HTML混排的限制，具体可参考<a href="../website-typography/#md">网页排版：Markdown混排</a>，可以总之不推荐这种方法。</p>
 <p><strong>内部样式表</strong><br>
 由于转换为网页时，Markdown插入图片的语句会对应于img元素，因此我们可以直接调整img元素样式。<br>
 在Markdown文档中插入以下HTML/CSS代码，便可使文章中所有插入的图片都居中：<br>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-tag">img</span>&#123;<span class="attribute">text-align</span>: center; <span class="attribute">margin</span>: <span class="number">0</span> auto;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>图片的其他属性如大小/宽度等都可以在此处统一调整，如<code>width: 80%;</code>。<br>
-当然也可以吧这几行规则保存到单独的CSS文件，作为外部样式表使用资源链接<code>&lt;link&gt;</code>引入。</p>
+当然也可以吧这几行规则保存到单独的CSS文件，作为外部样式表使用资源链接<code>&lt;link&gt;</code>引入；又或者修改所用主题页面主体(body)部分的CSS设置，对整个站点的所有图片都生效。</p>
 <p><strong>img标签</strong><br>
 上述方法会改变全文所有图片排版，如果只想调整个别图片，我们可以使用<code>&lt;img&gt;</code>标签，直接用HTML代码插入图片：<br>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">style</span>=<span class="string">"display: block; margin: 0 auto;"</span> <span class="attr">src</span>=<span class="string">"/images/Quotes/回忆.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">style</span>=<span class="string">"display: block; margin: 0 auto;"</span> <span class="attr">src</span>=<span class="string">"/path/to/image"</span> <span class="attr">alt</span>=<span class="string">""</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p><strong>Hexo标签插件</strong><br>
 最后，对于Hexo还可以使用img标签插件，该插件支持设置类名，从而控制图片排版：<br>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% img center /images/Quotes/回忆.jpg %&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% img center /path/to/image %&#125;</span><br></pre></td></tr></table></figure></p>
 <p>同时在文章中加入以下HTML/CSS代码，定义center类<br>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.center</span> &#123;</span></span><br><span class="line">    text-align: center;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p><strong>参考链接</strong><br>

@@ -1758,7 +1758,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #8affff;
+  background: #b86b87;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2786,17 +2786,19 @@ ul.breadcrumb li + li:last-child {
     font-size: 1.125em;
   }
 }
-.post-title {
-  font-size: 1.3em !important;
+@media (max-width: 991px) {
+  .post-title {
+    font-size: 1.203125em;
+  }
 }
-/*.post-title {*/
-/*  +tablet-mobile() {*/
-/*    font-size: 1.375*$font-size-small;*/
-/*  }*/
-/*  +desktop-large() {*/
-/*    font-size: 1.375*$font-size-base;*/
-/*  }*/
-/*  +desktop-largest() {*/
-/*    font-size: 1.375*$font-size-large;*/
-/*  }*/
-/*}*/
+@media (min-width: 1200px) {
+  .post-title {
+    font-size: 1.375em;
+  }
+}
+@media (min-width: 1600px) {
+  .post-title {
+    font-size: 1.546875em;
+  }
+}
+/*.post-title { font-size: 1.375em; }*/
