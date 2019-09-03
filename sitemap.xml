@@ -2,9 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yelf.me/repost/acceptance/</loc>
+    
+    <lastmod>2019-09-03T05:04:29.249Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yelf.me/notes/website/gitlab-pages/</loc>
+    
+    <lastmod>2019-09-03T04:59:36.386Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yelf.me/notes/website/website-multimedia/</loc>
+    
+    <lastmod>2019-09-03T03:37:19.913Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yelf.me/notes/website/markdown-figure/</loc>
+    
+    <lastmod>2019-09-03T03:16:44.147Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yelf.me/notes/website/website-test/</loc>
     
-    <lastmod>2019-09-02T05:42:46.942Z</lastmod>
+    <lastmod>2019-09-03T03:03:14.751Z</lastmod>
     
   </url>
   
@@ -12,13 +40,6 @@
     <loc>https://yelf.me/notes/website/website-typography/</loc>
     
     <lastmod>2019-09-02T05:29:36.328Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yelf.me/notes/website/markdown-figure/</loc>
-    
-    <lastmod>2019-09-02T05:19:12.980Z</lastmod>
     
   </url>
   
@@ -40,13 +61,6 @@
     <loc>https://yelf.me/about/index.html</loc>
     
     <lastmod>2019-09-01T15:46:08.579Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yelf.me/notes/website/website-multimedia/</loc>
-    
-    <lastmod>2019-09-01T15:37:56.892Z</lastmod>
     
   </url>
   
@@ -289,13 +303,6 @@
   </url>
   
   <url>
-    <loc>https://yelf.me/repost/acceptance/</loc>
-    
-    <lastmod>2019-04-02T01:07:23.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://yelf.me/enjoy/hobby/guqin-reference/</loc>
     
     <lastmod>2019-04-02T01:01:37.000Z</lastmod>
@@ -488,13 +495,6 @@
     <loc>https://yelf.me/enjoy/hobby/anime/</loc>
     
     <lastmod>2018-12-28T01:20:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yelf.me/notes/website/gitlab-pages/</loc>
-    
-    <lastmod>2018-08-29T02:28:03.000Z</lastmod>
     
   </url>
   

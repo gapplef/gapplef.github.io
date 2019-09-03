@@ -66,7 +66,7 @@
 <meta property="og:site_name" content="C&#39;Joy">
 <meta property="og:description" content="音视频元素 HTML5提供了插入音乐及视频的元素：&amp;lt;video&amp;gt;,&amp;lt;audio&amp;gt;，使用非常简单，可以设置高度宽度等属性。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-01T15:37:56.892Z">
+<meta property="og:updated_time" content="2019-09-03T03:37:19.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从零开始建立个人博客V：插入音视频">
 <meta name="twitter:description" content="音视频元素 HTML5提供了插入音乐及视频的元素：&amp;lt;video&amp;gt;,&amp;lt;audio&amp;gt;，使用非常简单，可以设置高度宽度等属性。">
@@ -353,20 +353,6 @@
       </span>
         
       
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/notes/website/website-multimedia/#comments" itemprop="discussionUrl"><span class="post-comments-count disqus-comment-count" data-disqus-identifier="notes/website/website-multimedia/" itemprop="commentCount"></span></a>
-  </span>
-  
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-        
-      
       <span class="post-meta-item-text">Valine: </span>
     
     <a title="valine" href="/notes/website/website-multimedia/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/notes/website/website-multimedia/" itemprop="commentCount"></span></a>
@@ -386,11 +372,11 @@
         <h3 id="音视频元素"><a class="markdownIt-Anchor" href="#音视频元素"></a> 音视频元素</h3>
 <p>HTML5提供了插入音乐及视频的元素：<code>&lt;video&gt;</code>,<code>&lt;audio&gt;</code>，使用非常简单，可以设置高度宽度等属性。</p>
 <a id="more"></a>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"video.mp4"</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">"music.mp3"</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">autoplay</span> <span class="attr">controls</span> <span class="attr">style</span>=<span class="string">"display:block;margin:auto; text-align: center"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"music.mp3"</span> <span class="attr">type</span>=<span class="string">"audio/mpeg"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<audio src="/multimedia/Simple Plan - Take My Hand.mp3" controls="controls" style="display:block;margin:auto; text-align: center">
-</audio>
-<p>音视频标签的使用简单，但显示效果通常不怎么美观，为实现更美观的效果可以选择使用Hexo标签插件。此外对于video标签，为使插入的视频宽度自适应屏幕需额外配置，具体可参考文章关于iframe的<a href="#typography">更新内容</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"position:relative;height:0;padding-bottom:56.25%"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">style</span>=<span class="string">"position:absolute;left:0;top:0;width:100%;height:100%"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">src</span>=<span class="string">"video.mp4"</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span> <span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"video.mp4"</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">"music.mp3"</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">autoplay</span> <span class="attr">controls</span> <span class="attr">style</span>=<span class="string">"display:block;margin:auto; text-align: center"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"music.mp3"</span> <span class="attr">type</span>=<span class="string">"audio/mpeg"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><audio src="/multimedia/郭静 - 在树上唱歌.mp3" controls="controls" style="display:block;margin:auto; text-align: center"></audio></p>
+<p>对于video标签，为使插入的视频宽度自适应屏幕需要一些额外设置，具体介绍可参考下面关于iframe的<a href="#typography">更新内容</a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"position:relative;height:0;padding-bottom:56.25%"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">style</span>=<span class="string">"position:absolute;left:0;top:0;width:100%;height:100%"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">src</span>=<span class="string">"video.mp4"</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span> <span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>音视频标签的使用相对简单，但显示效果通常不怎么美观，为实现更美观的效果可以选择使用Hexo标签插件。</p>
 <h3 id="hexo标签插件"><a class="markdownIt-Anchor" href="#hexo标签插件"></a> Hexo标签插件</h3>
 <p>通过安装额外<a href="https://hexo.io/plugins/index.html" target="_blank" rel="noopener">插件</a>，可以扩展Hexo对多媒体的支持。HTML5的音频播放器有APlayer、cPlayer，视频播放器可以使用DPlayer。<br>
 首先安装插件</p>
@@ -413,12 +399,12 @@ iframe使用也非常简单，最重要的是src属性，用于指向资源，�
 <p><span id="typography">2018年07月13日更新</span>(关于HTML/CSS知识参考<a href="../website-typography/">VI.网页排版</a>)：</p>
 <p>iframe有一个非常蛋疼的问题(主要是视频，音频问题不大)：</p>
 <ul>
-<li>如果不指定宽度、高度，则默认的视频框是非常小的300px x 150px，只适合手机查看；</li>
-<li>而指定高度、宽度后，又不会自适应缩放，尤其是手机上不能自适应缩小，观感会很差；</li>
+<li>若不指定宽度、高度，默认的视频框是非常小的300px x 150px，只适合手机查看；</li>
+<li>而指定高度、宽度后，不会自适应缩放，尤其是手机上不能自适应缩小，观感很差；</li>
 <li>宽度可通过width=&quot;100%&quot;来自适应屏幕宽度；但高度100%没用，自动的话又会是默认的150px，而不是保持视频长宽比进行缩放。</li>
 <li>上面提到的Hexo内置的iframe标签插件也存在该问题</li>
 </ul>
-<p>这个问题似乎很普遍，网上有不少讨论。常见的做法就是将iframe放入一个容器中，并在容器的参数中设定一个高宽比(padding-bottom)，从而实现视频高度随宽度按比例缩放。最后还要在容器外再加一层段落元素<code>&lt;p&gt;...&lt;/p&gt;</code>来换行。具体可参考<a href="https://benmarshall.me/responsive-iframes/" target="_blank" rel="noopener">Responsive IFrames — The Right Way (CSS Only)!</a><br>
+<p>这个问题似乎很普遍，网上有不少讨论。常见的做法就是将iframe放入一个容器中，并在容器的参数中设定一个高宽比(padding-bottom)，从而实现视频高度随宽度按比例缩放。最后还要在容器外再加一层段落元素<code>&lt;p&gt;...&lt;/p&gt;</code>来换行(对于Markdown，块级元素只需与正文以空行相隔，会自动添加换行)。具体可参考<a href="https://benmarshall.me/responsive-iframes/" target="_blank" rel="noopener">Responsive IFrames — The Right Way (CSS Only)!</a><br>
 这种做法缺点很明显：你需要在插入iframe代码的地方逐个手动添加容器代码；而且对于不同长宽比的视频还需要定义多个容器来设置不同比例，比如常见的16:9的视频就是56.25%(9/16)，而4:3的视频则是75%(3/4)。不过对于插入视频不多的，这些缺点其实还好。</p>
 <p>还有一种比较理想的做法，是使用jQuery(JavaScript)，具体可参考<a href="https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php" target="_blank" rel="noopener">Fluid Width Video</a>、<a href="http://www.skipser.com/p/2/p/auto-resize-youtube-videos-in-responsive-layout.html" target="_blank" rel="noopener">Make YouTube Videos Auto-Resize in a Responsive Site Layout.</a><br>
 这种做法的缺点就是你至少需要了解一点JavaScript；你也可以引入外部jQuery，但考虑到国内的网络环境还是蛋疼。</p>
@@ -1214,16 +1200,6 @@ window.addEventListener('pjax:success', () => {
 
   
 
-<script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://blog-yelf.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
 <script>
   function disqus_config() {
     this.page.url = "https://yelf.me/notes/website/website-multimedia/";

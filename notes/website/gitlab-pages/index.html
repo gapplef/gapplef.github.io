@@ -66,7 +66,7 @@
 <meta property="og:site_name" content="C&#39;Joy">
 <meta property="og:description" content="尝试将博客从GitHub迁移到GitLab，本以为完全没有障碍，一样操作就行了，最后却发现两者的思路完全不一样，而且到处都是git的坑😂">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-29T02:28:03.000Z">
+<meta property="og:updated_time" content="2019-09-03T04:59:36.386Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从零开始建立个人博客IX：由GitHub迁移到GitLab">
 <meta name="twitter:description" content="尝试将博客从GitHub迁移到GitLab，本以为完全没有障碍，一样操作就行了，最后却发现两者的思路完全不一样，而且到处都是git的坑😂">
@@ -353,20 +353,6 @@
       </span>
         
       
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/notes/website/gitlab-pages/#comments" itemprop="discussionUrl"><span class="post-comments-count disqus-comment-count" data-disqus-identifier="notes/website/gitlab-pages/" itemprop="commentCount"></span></a>
-  </span>
-  
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-        
-      
       <span class="post-meta-item-text">Valine: </span>
     
     <a title="valine" href="/notes/website/gitlab-pages/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/notes/website/gitlab-pages/" itemprop="commentCount"></span></a>
@@ -388,7 +374,7 @@
 </blockquote>
 <a id="more"></a>
 <h3 id="gitlab-pages简介"><a class="markdownIt-Anchor" href="#gitlab-pages简介"></a> GitLab Pages简介</h3>
-<p>GitLab与Github类似，而且对开源社区更友好，很多大型的开源项目，如GNOME、Debian都在向GitLab迁移。GitLab每个代码库空间限制为10G，文件大小不限，仓库数量不限，包括私有仓库的数量；需要注意的是GitLab CI/CD限制仓库大小1G，单文件100M，GitLab Pages因为要使用CI/CD也受此限制<a href="https://docs.gitlab.com/ee/user/gitlab_com/" target="_blank" rel="noopener"><sup>1</sup></a>。作为对比，Github每个代码库空间软性限制1G，单文件100M，且私有仓库为付费项目。</p>
+<p>GitLab与Github类似，而且对开源社区更友好，很多大型的开源项目，如GNOME、Debian都在向GitLab迁移。GitLab每个代码库空间限制为10G，文件大小不限，仓库数量不限，包括私有仓库的数量；需要注意的是GitLab CI/CD 限制仓库大小1G，单文件100M，GitLab Pages因为要使用CI/CD也受此限制<a href="https://docs.gitlab.com/ee/user/gitlab_com/" target="_blank" rel="noopener"><sup>1</sup></a>。作为对比，Github每个代码库空间软性限制1G，单文件100M，<s>且私有仓库为付费项目</s>。</p>
 <p>与Github中类似，用户页面(User Page)对应的项目名必须是<code>username.gitlab.io</code>，这样才可以通过网址 <code>https://username.gitlab.io</code> 访问；而其他名字的项目，开启项目页面(Project Page)后，访问网址为 <code>https://username.gitlab.io/projectname</code> 。</p>
 <p>但GitLab中建立Pages的思路与GitHub完全不同。对于Github，使用Hexo的流程为，首先在本地安装各种Hexo插件，之后运行<code>Hexo generate</code>在本地生成各种页面，最后再执行<code>Hexo deploy</code>部署到远程，就可以访问了。整个过程无需git操作，在<code>_config.yml</code>中设置好仓库并配置好SSH密钥，Hexo会自动调用Git进行操作，git目录是位于博客目录下的<code>.deploy_git</code>。</p>
 <p>而对于GitLab，由于其提供了基于Docker的持续集成/持续部署(CI/CD)服务，上述所有操作都可以在云端实现，而无需本地操作，包括插件安装都在云端完成。而为此需要配置一个名为<code>.gitlab-ci.yml</code>的文件，告诉GitLab所需要执行的操作，内容为执行的脚本及处理的文件等。整个过程本地完全无需<code>hexo generate</code>和<code>hexo deploy</code>，而是将博客源文件作为git管理的代码，完全使用git操作。将博客目录推送到GitLab上后，会由一个名为<code>GitLab-Runner</code>的程序在云端根据<code>.gitlab-ci.yml</code>的内容处理你的源文件。与在本地类似，这个过程需要需要2-3分钟。</p>
@@ -396,8 +382,8 @@
 <p>总结起来就是：Github需要在本地手动执行Hexo，生成并部署网页；而GitLab则只需提供源文件，在云端自动生成及部署。</p>
 <p>两种思路其实各有优劣：</p>
 <ul>
-<li>GitHub的方式，需要用户在本地安装Node.js、Hexo及相关插件，但是操作完全在本地，更加直观。而且整个过程只需要使用基本的Hexo命令，不需要了解太深入的Git知识，对于一般用户更友好。不好的是最终推送到代码库中的内容是Hexo处理生成的网页，而并非原文件，不符合Git管理源代码的思路。</li>
-<li>GitLab的方式，Hexo对文件的处理部署都在云端执行，不是很直观。用户甚至不需要在本地安装任何Node.js、Hexo的东西，但为了方便预览、编辑，还是装上了比较好。整个操作完全由Git完成，需要用户熟悉Git的用法，其思路本质就是Git管理源码的思路，最终仓库内容与本地源文件一致。</li>
+<li>GitHub的方式，需要用户在本地安装Node.js、Hexo及相关插件，但是操作完全在本地，更加直观。而且整个过程只需要使用基本的Hexo命令，不需要了解太深入的Git知识，对于一般用户更友好。不好的是最终推送到代码库中的内容是Hexo处理生成的网页，而并非源文件，不符合Git管理源代码的思路。</li>
+<li>GitLab的方式，Hexo对文件的处理部署都在云端执行，不是很直观。用户甚至不需要在本地安装任何Node.js、Hexo的东西，当然为了方便预览、编辑，还是装上了比较好。整个操作完全由Git完成，需要用户熟悉Git的用法，其思路本质就是Git管理源码的思路，最终仓库内容与本地源文件一致。</li>
 </ul>
 <h3 id="创建pages"><a class="markdownIt-Anchor" href="#创建pages"></a> 创建Pages</h3>
 <ol>
@@ -430,10 +416,10 @@
 <h3 id="问题及解决"><a class="markdownIt-Anchor" href="#问题及解决"></a> 问题及解决</h3>
 <ul>
 <li>对于GitLab，如果仍按照Github的方式操作，会遇到CI/CD的脚本执行失败，无法生成页面；如果选择<code>.gitlab-ci.yml</code>为<code>HTML</code>可以部署成功，但页面没有主题，显示混乱。因此换到了GitLab就按照GitLab的思路操作，不要在本地执行<code>Hexo g -d</code>，用git管理文件(可以在本地<code>Hexo s</code>预览)。</li>
-<li>GitLab会在云端执行hexo g后自动部署，无需在<code>.gitlab-ci.yml</code>中写入hexo d，因此可以在博客设置<code>_config.yml</code>中将deploy部分直接注释掉。当然不注释也没事，这些行不会起作用。</li>
-<li>整个博客目录下的<code>.gitignore</code>中包含有node_modules/、public/、.deploy*/目录，git push时会自动忽略这些目录，推送到远程的只有scaffolds、source、themes目录下内容。</li>
+<li>GitLab会在云端执行hexo g 后自动部署，无需在<code>.gitlab-ci.yml</code>中写入hexo d，因此可以在博客设置<code>_config.yml</code>中将deploy部分直接注释掉。当然不注释也没事，这些行不会起作用。</li>
+<li>整个博客目录下的<code>.gitignore</code>中包含有node_modules/、public/、.deploy*/目录，git push 时会自动忽略这些目录，推送到远程的只有scaffolds、source、themes目录下内容。</li>
 <li>NexT主题的下的<code>.gitignore</code>中包含有外部库source/lib/*目录，因此git push时会忽略这些外部依赖库，比如facybox。最终会造成远程仓库不含这些依赖库，博客显示异常，注意移除这部分内容。</li>
-<li>此外如果使用git clone的方式下载的主题或外部库时，比如fancybox，需要手动删除对应的.git目录，因为在.git目录下最好不要出现.git目录，会提示<code>warning: adding embedded git repository: ....</code></li>
+<li>此外如果使用git clone 的方式下载的主题或外部库时，比如fancybox，需要手动删除对应的.git目录，因为在.git目录下最好不要出现.git目录，会提示<code>warning: adding embedded git repository: ....</code></li>
 <li>上述两个问题会造成NexT主题开启fancybox后，博客页面一片空白，无法正常显示。</li>
 <li>对于Hexo插件：直接在本地目录下安装插件后，package.json会自动修改，包含相应插件。因此直接在本地安装好全部扩展后，虽然node_modules/不会上传到远程仓库，但在CI/CD时<code>npm install</code> 会根据package.json文件内容自动安装全部所需插件及相关依赖，无需在<code>.gitlab-ci.yml</code>中一行行安装。</li>
 <li>GitHub情况下，由于是在本地执行<code>hexo g -d</code>，对于软链接图片，会沿着链接找到原始图片资源，将其复制到要推送的public目录，并推送到仓库；对于GitLab，则是先推送再执行<code>hexo g</code>，推送到云端的只是一个链接文件(夹)，没有原始资源，最终图片会无法显示。</li>
@@ -457,12 +443,12 @@
 <li>域名验证：根据提示添加DNS解析TXT记录，用于验证对域名的所有权</li>
 </ul>
 <h3 id="开启https"><a class="markdownIt-Anchor" href="#开启https"></a> 开启HTTPS</h3>
-<p>使用GitHub Pages时一直没弄明白要怎么给自定义域名开启HTTPS，而GitLab Pages在设置中添加自定义域名时，如果选择开启HTTPS，会要求同时添加证书信息，简单明白。根据要求，将自己证书的<code>.pem</code>和<code>.key</code>文件的内容粘贴到对应位置，保存即可，很快就会生效。提供证书后，注意勾选强制使用HTPPS，这样使用HTTP访问时可以自动转跳HTTPS。</p>
-<p>证书可以申请免费的，我在阿里万网注册的域名，在<code>安全</code> &gt; <code>CA证书</code>中即可申请免费的赛门铁克证书，有效期一年，到期了重新申请即可。此外GitLab还计划实现对Let’s Encrypt的支持，到时候开启HTTPS将更加简单<a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/28996" target="_blank" rel="noopener"><sup>2</sup></a>，目前使用Let’s Encrypt还需要自行申请并每3个月都手动更新，挺麻烦的，官方文档对此有详细介绍<a href="https://about.gitlab.com/2016/04/11/tutorial-securing-your-gitlab-pages-with-tls-and-letsencrypt/" target="_blank" rel="noopener"><sup>3</sup></a>。最后还有SSL For Free等方便Let’s Encrypt使用的网站。</p>
-<p>现在还有一个问题，申请的赛门铁克免费证书不是泛域名证书/通配符证书(Wildcard Certificates)，只有<code>yelf.me</code>和<code>www.yelf.me</code>两个域名能够使用，不支持次级域名如<code>weibo.yelf.me</code>使用。</p>
 <div class="note info">
-            <p><strong>注：</strong> 2018年5月1日 GitHub正式上线了对Let’s Encrypt的支持，自定义域名无需设置即可开启HTTPS<a href="https://blog.github.com/2018-05-01-github-pages-custom-domains-https/" target="_blank" rel="noopener"><sup>4</sup></a>。</p>
+            <p>2018年5月1日 GitHub正式上线了对Let’s Encrypt的支持，自定义域名无需设置即可开启HTTPS<a href="https://blog.github.com/2018-05-01-github-pages-custom-domains-https/" target="_blank" rel="noopener"><sup>2</sup></a>。<br>2019年7月22日 GitLab 12.1中加入了Let’s Encrypt自动认证，自定义域名可一键开启HTTPS<a href="https://docs.gitlab.com/ee/user/project/pages/custom_domains_ssl_tls_certification/lets_encrypt_integration.html" target="_blank" rel="noopener"><sup>3</sup></a>。</p>
           </div>
+<p>使用GitHub Pages时一直没弄明白要怎么给自定义域名开启HTTPS，而GitLab Pages在设置中添加自定义域名时，如果选择开启HTTPS，会要求同时添加证书信息，简单明白。根据要求，将自己证书的<code>.pem</code>和<code>.key</code>文件的内容粘贴到对应位置，保存即可，很快就会生效。提供证书后，注意勾选强制使用HTPPS，这样使用HTTP访问时可以自动转跳HTTPS。</p>
+<p><s>证书可以申请免费的，我在阿里万网注册的域名，在<code>安全</code> &gt; <code>CA证书</code>中即可申请免费的赛门铁克证书，有效期一年，到期了重新申请即可。此外GitLab还计划实现对Let’s Encrypt的支持，到时候开启HTTPS将更加简单<a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/28996" target="_blank" rel="noopener"><sup>4</sup></a>，目前使用Let’s Encrypt还需要自行申请并每3个月都手动更新，挺麻烦的，官方文档对此有详细介绍<a href="https://about.gitlab.com/2016/04/11/tutorial-securing-your-gitlab-pages-with-tls-and-letsencrypt/" target="_blank" rel="noopener"><sup>5</sup></a>。最后还有SSL For Free等方便Let’s Encrypt使用的网站。</s></p>
+<p><s>现在还有一个问题，申请的赛门铁克免费证书不是泛域名证书/通配符证书(Wildcard Certificates)，只有<code>yelf.me</code>和<code>www.yelf.me</code>两个域名能够使用，不支持次级域名如<code>weibo.yelf.me</code>使用。</s></p>
 <h3 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接"></a> 参考链接</h3>
 <p>GitLab Pages官方文档：<a href="https://docs.gitlab.com/ee/user/project/pages/" target="_blank" rel="noopener">https://docs.gitlab.com/ee/user/project/pages/</a><br>
 在gitlab上搭建hexo博客：<a href="https://huangjj27.gitlab.io/posts/hexo-on-gitlab/" target="_blank" rel="noopener">https://huangjj27.gitlab.io/posts/hexo-on-gitlab/</a></p>
@@ -1220,16 +1206,6 @@ window.addEventListener('pjax:success', () => {
 
   
 
-<script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://blog-yelf.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
 <script>
   function disqus_config() {
     this.page.url = "https://yelf.me/notes/website/gitlab-pages/";
