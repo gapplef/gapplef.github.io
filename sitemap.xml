@@ -2,16 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://yelf.me/enjoy/hobby/photography/</loc>
+    <loc>https://yelf.me/enjoy/watching/%E5%A4%A7%E6%8A%A4%E6%B3%95/</loc>
     
-    <lastmod>2019-09-03T05:16:59.725Z</lastmod>
+    <lastmod>2019-09-05T14:46:13.049Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yelf.me/enjoy/watching/Ready_Player_One/</loc>
+    
+    <lastmod>2019-09-05T14:44:15.117Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yelf.me/notes/statlearn/entropy/</loc>
+    
+    <lastmod>2019-09-04T02:10:01.887Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yelf.me/notes/compsci/sysadmin/bit-byte/</loc>
+    
+    <lastmod>2019-09-04T02:09:09.246Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yelf.me/repost/get-rich/</loc>
+    
+    <lastmod>2019-09-03T13:38:00.354Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://yelf.me/repost/acceptance/</loc>
     
-    <lastmod>2019-09-03T05:04:29.249Z</lastmod>
+    <lastmod>2019-09-03T13:36:04.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yelf.me/enjoy/hobby/photography/</loc>
+    
+    <lastmod>2019-09-03T05:16:59.725Z</lastmod>
     
   </url>
   
@@ -121,13 +156,6 @@
   </url>
   
   <url>
-    <loc>https://yelf.me/enjoy/watching/Ready_Player_One/</loc>
-    
-    <lastmod>2019-08-20T08:56:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://yelf.me/notes/website/website-weibo/</loc>
     
     <lastmod>2019-08-19T12:51:08.000Z</lastmod>
@@ -152,13 +180,6 @@
     <loc>https://yelf.me/notes/math/algebra/algebra-102/</loc>
     
     <lastmod>2019-08-11T14:43:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yelf.me/notes/statlearn/entropy/</loc>
-    
-    <lastmod>2019-08-11T14:32:25.000Z</lastmod>
     
   </url>
   
@@ -408,30 +429,9 @@
   </url>
   
   <url>
-    <loc>https://yelf.me/notes/compsci/sysadmin/bit-byte/</loc>
-    
-    <lastmod>2019-01-16T11:44:47.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://yelf.me/notes/compsci/sysadmin/batch-processing/</loc>
     
     <lastmod>2019-01-16T11:44:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yelf.me/enjoy/watching/anime-before-2013/</loc>
-    
-    <lastmod>2018-12-28T01:31:02.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yelf.me/enjoy/watching/anime-after-2013/</loc>
-    
-    <lastmod>2018-12-28T01:30:56.000Z</lastmod>
     
   </url>
   
